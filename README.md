@@ -1,5 +1,3 @@
-# Colegio Fray Bartolom del las Casa
-<!DOCTYPE html>
 <html lang="es">
 <head>
  <meta charset="UTF-8">
