@@ -1,18 +1,29 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Identificador Avanzado de Animales</title>
- <style>
-   body {
-     font-family: 'Arial', sans-serif;
-     margin: 0;
-     padding: 0;
-     background: linear-gradient(135deg, #1e3c72, #2a5298);
-     color: #fff;
-     text-align: center;
-     overflow-x: hidden;
-   }
+  <meta charset="UTF-8">
+  <title>Mi Sitio Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 2em;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenido ala Aplicasion  del Colegio Fray Bartolomé de las Casas</h1>
+  <p>Esta es una página web creada con HTML, CSS y GitHub Pages.</p>
+
+</body>
+</html>
  
    h1 {
      font-size: 2.5rem;
