@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MultiÁrea Digital 2.0</title>
+    <title>MultiÁrea Digital 2.0: Identificador de Animales y Explorador Solar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -277,7 +277,7 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            height: 300px;
+            height: 400px; /* Aumentado para lunas */
             margin: 40px auto;
             display: flex;
             justify-content: center;
@@ -290,9 +290,14 @@
             height: 80px;
             background: radial-gradient(circle, #ffd700, #ff8c00, #ff4500);
             border-radius: 50%;
-            box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00;
+            box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00, inset 0 0 20px rgba(255, 255, 255, 0.2);
             z-index: 10;
             animation: pulse 4s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
         }
 
         @keyframes pulse {
@@ -300,7 +305,6 @@
                 transform: scale(1);
                 box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00;
             }
-
             100% {
                 transform: scale(1.1);
                 box-shadow: 0 0 70px #ff4500, 0 0 120px #ff8c00;
@@ -320,11 +324,46 @@
             animation: orbit linear infinite;
             cursor: pointer;
             transition: all 0.3s;
+            position: relative; /* Para lunas */
         }
 
         .planet-space:hover {
             transform: scale(1.5);
             z-index: 20;
+        }
+
+        /* Órbitas de lunas (más pequeñas) */
+        .moon-orbit {
+            position: absolute;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .moon {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ccc;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: moon-orbit linear infinite;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes moon-orbit {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
         }
 
         .planetas-grid {
@@ -436,6 +475,36 @@
             gap: 10px;
         }
 
+        /* Nueva sección para lunas */
+        .moons-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #00f3ff;
+        }
+
+        .moons-section h4 {
+            color: #00f3ff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .moon-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .moon-item:last-child {
+            border-bottom: none;
+        }
+
+        .moon-name {
+            font-weight: 600;
+        }
+
         .animal-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -458,6 +527,47 @@
             padding-bottom: 8px;
             margin-top: 0;
         }
+
+        .error-message {
+            color: #ff6b6b;
+            font-style: italic;
+        }
+
+        /* Mejora: Filtro avanzado */
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        /* Mejora: Animaciones orbitales completas */
+        .orbit-mercurio { width: 160px; height: 160px; }
+        .orbit-venus { width: 220px; height: 220px; }
+        .orbit-tierra { width: 280px; height: 280px; }
+        .orbit-marte { width: 340px; height: 340px; }
+        .orbit-jupiter { width: 500px; height: 500px; }
+        .orbit-saturno { width: 600px; height: 600px; }
+        .orbit-urano { width: 700px; height: 700px; }
+        .orbit-neptuno { width: 800px; height: 800px; }
+
+        .planet-mercurio { width: 15px; height: 15px; background: #a5a5a5; animation-duration: 5s; top: 0; left: 80px; }
+        .planet-venus { width: 20px; height: 20px; background: #e6bb6d; animation-duration: 8s; top: 0; left: 110px; }
+        .planet-tierra { width: 22px; height: 22px; background: #2f6aae; animation-duration: 12s; top: 0; left: 140px; }
+        .planet-marte { width: 18px; height: 18px; background: #c1440e; animation-duration: 15s; top: 0; left: 170px; }
+        .planet-jupiter { width: 40px; height: 40px; background: #d8ca9d; animation-duration: 20s; top: 0; left: 250px; }
+        .planet-saturno { width: 35px; height: 35px; background: #e3d8b0; animation-duration: 25s; top: 0; left: 300px; }
+        .planet-urano { width: 25px; height: 25px; background: #b3e3e3; animation-duration: 30s; top: 0; left: 350px; }
+        .planet-neptuno { width: 25px; height: 25px; background: #3454df; animation-duration: 35s; top: 0; left: 400px; }
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
@@ -489,6 +599,11 @@
             .animal-details {
                 grid-template-columns: 1fr;
             }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -514,29 +629,50 @@
 <body>
     <div class="main-container">
         <div class="header-main">
-            <h1>MultiÁrea Digital</h1>
+            <h1>MultiÁrea Digital 2.0</h1>
             <p>Explora, descubre y aprende con nuestras herramientas</p>
         </div>
 
-        <div class="tab-menu">
-            <button class="tab-button active" onclick="showSection('animales')">Identificador de Animales</button>
-            <button class="tab-button" onclick="showSection('espacio')">Explorador del Sistema Solar</button>
+        <div class="tab-menu" role="tablist">
+            <button class="tab-button active" data-tab="animales" aria-label="Identificador de Animales" onclick="showSection('animales')">Identificador de Animales</button>
+            <button class="tab-button" data-tab="espacio" aria-label="Explorador del Sistema Solar" onclick="showSection('espacio')">Explorador del Sistema Solar</button>
         </div>
 
-        <div id="animales" class="content-section active">
+        <div id="animales" class="content-section active" role="tabpanel">
             <h1>Identificador de Animales</h1>
             <div class="authors">Por Rodrigo Mesis, Carlos Mendoza y Ariel Flores</div>
 
-            <div class="search-container">
-                <input type="text" id="animalSearch" placeholder="Buscar animal por nombre...">
-                <button id="searchButton">Buscar</button>
+            <div class="filter-container">
+                <select id="filterClasificacion" class="filter-select" onchange="applyFilters()">
+                    <option value="">Filtrar por Clasificación</option>
+                    <option value="Mamífero">Mamífero</option>
+                    <option value="Reptil">Reptil</option>
+                    <option value="Ave">Ave</option>
+                    <option value="Anfibio">Anfibio</option>
+                    <option value="Pez">Pez</option>
+                    <option value="Insecto">Insecto</option>
+                </select>
+                <select id="filterHabitat" class="filter-select" onchange="applyFilters()">
+                    <option value="">Filtrar por Hábitat</option>
+                    <option value="Global">Global</option>
+                    <option value="África">África</option>
+                    <option value="América">América</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Océanos">Océanos</option>
+                </select>
             </div>
-            <div id="searchResults" class="search-results"></div>
+
+            <div class="search-container">
+                <input type="text" id="animalSearch" placeholder="Buscar animal por nombre..." aria-label="Buscar animal">
+                <button id="searchButton" aria-label="Buscar">Buscar</button>
+            </div>
+            <div id="searchResults" class="search-results" role="listbox"></div>
 
             <div id="result"></div>
         </div>
 
-        <div id="espacio" class="content-section">
+        <div id="espacio" class="content-section" role="tabpanel">
             <div class="space-header">
                 <h2>Explorador del Sistema Solar</h2>
                 <p class="space-subtitle">DESCUBRE LOS PLANETAS DE NUESTRO SISTEMA SOLAR</p>
@@ -544,47 +680,85 @@
             </div>
 
             <div class="solar-system">
-                <div class="sun"></div>
-                <div class="orbit" style="width: 160px; height: 160px;"></div>
-                <div class="planet-space" style="width: 15px; height: 15px; background: #a5a5a5; animation-duration: 5s; top: 0; left: 80px;" onclick="mostrarInfoPlaneta('mercurio')"></div>
-                <div class="orbit" style="width: 220px; height: 220px;"></div>
-                <div class="planet-space" style="width: 20px; height: 20px; background: #e6bb6d; animation-duration: 8s; top: 0; left: 110px;" onclick="mostrarInfoPlaneta('venus')"></div>
-                <div class="orbit" style="width: 280px; height: 280px;"></div>
-                <div class="planet-space" style="width: 22px; height: 22px; background: #2f6aae; animation-duration: 12s; top: 0; left: 140px;" onclick="mostrarInfoPlaneta('tierra')"></div>
-                <div class="orbit" style="width: 340px; height: 340px;"></div>
-                <div class="planet-space" style="width: 18px; height: 18px; background: #c1440e; animation-duration: 15s; top: 0; left: 170px;" onclick="mostrarInfoPlaneta('marte')"></div>
+                <div class="sun" title="El Sol: Una estrella de tipo G2V, con una masa 333,000 veces la de la Tierra. Temperatura superficial: ~5,500°C. Diámetro: 1.39 millones km.">
+                    ☀️
+                </div>
+                <div class="orbit orbit-mercurio"></div>
+                <div class="planet-space planet-mercurio" onclick="mostrarInfoPlaneta('mercurio')" aria-label="Mercurio">
+                    <!-- Sin lunas conocidas -->
+                </div>
+                <div class="orbit orbit-venus"></div>
+                <div class="planet-space planet-venus" onclick="mostrarInfoPlaneta('venus')" aria-label="Venus">
+                    <!-- Sin lunas conocidas -->
+                </div>
+                <div class="orbit orbit-tierra"></div>
+                <div class="planet-space planet-tierra" onclick="mostrarInfoPlaneta('tierra')" aria-label="Tierra">
+                    <div class="moon-orbit" style="width: 30px; height: 30px;"></div>
+                    <div class="moon" style="animation-duration: 27s; background: #ddd;"></div> <!-- Luna -->
+                </div>
+                <div class="orbit orbit-marte"></div>
+                <div class="planet-space planet-marte" onclick="mostrarInfoPlaneta('marte')" aria-label="Marte">
+                    <div class="moon-orbit" style="width: 25px; height: 25px;"></div>
+                    <div class="moon" style="animation-duration: 25s; background: #ccc;"></div> <!-- Fobos -->
+                    <div class="moon-orbit" style="width: 35px; height: 35px;"></div>
+                    <div class="moon" style="animation-duration: 30s; background: #aaa;"></div> <!-- Deimos -->
+                </div>
+                <div class="orbit orbit-jupiter"></div>
+                <div class="planet-space planet-jupiter" onclick="mostrarInfoPlaneta('jupiter')" aria-label="Júpiter">
+                    <div class="moon-orbit" style="width: 15px; height: 15px;"></div>
+                    <div class="moon" style="animation-duration: 10s; background: #fff;"></div> <!-- Io (representativa) -->
+                    <div class="moon-orbit" style="width: 25px; height: 25px;"></div>
+                    <div class="moon" style="animation-duration: 15s; background: #eee;"></div> <!-- Europa -->
+                </div>
+                <div class="orbit orbit-saturno"></div>
+                <div class="planet-space planet-saturno" onclick="mostrarInfoPlaneta('saturno')" aria-label="Saturno">
+                    <div class="moon-orbit" style="width: 20px; height: 20px;"></div>
+                    <div class="moon" style="animation-duration: 12s; background: #ddd;"></div> <!-- Titán -->
+                    <div class="moon-orbit" style="width: 30px; height: 30px;"></div>
+                    <div class="moon" style="animation-duration: 18s; background: #ccc;"></div> <!-- Rea -->
+                </div>
+                <div class="orbit orbit-urano"></div>
+                <div class="planet-space planet-urano" onclick="mostrarInfoPlaneta('urano')" aria-label="Urano">
+                    <div class="moon-orbit" style="width: 18px; height: 18px;"></div>
+                    <div class="moon" style="animation-duration: 14s; background: #b3e3e3;"></div> <!-- Miranda -->
+                </div>
+                <div class="orbit orbit-neptuno"></div>
+                <div class="planet-space planet-neptuno" onclick="mostrarInfoPlaneta('neptuno')" aria-label="Neptuno">
+                    <div class="moon-orbit" style="width: 22px; height: 22px;"></div>
+                    <div class="moon" style="animation-duration: 16s; background: #3454df;"></div> <!-- Tritón -->
+                </div>
             </div>
 
             <div class="planetas-grid">
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('mercurio')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('mercurio')" aria-label="Información de Mercurio">
                     <div class="planet-icon" style="color: #a5a5a5;"><i class="fas fa-temperature-full"></i></div>
                     <div class="planeta-nombre">Mercurio</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('venus')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('venus')" aria-label="Información de Venus">
                     <div class="planet-icon" style="color: #e6bb6d;"><i class="fas fa-fire"></i></div>
                     <div class="planeta-nombre">Venus</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('tierra')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('tierra')" aria-label="Información de Tierra">
                     <div class="planet-icon" style="color: #2f6aae;"><i class="fas fa-globe-americas"></i></div>
                     <div class="planeta-nombre">Tierra</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('marte')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('marte')" aria-label="Información de Marte">
                     <div class="planet-icon" style="color: #c1440e;"><i class="fas fa-mountain"></i></div>
                     <div class="planeta-nombre">Marte</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('jupiter')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('jupiter')" aria-label="Información de Júpiter">
                     <div class="planet-icon" style="color: #d8ca9d;"><i class="fas fa-wind"></i></div>
                     <div class="planeta-nombre">Júpiter</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('saturno')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('saturno')" aria-label="Información de Saturno">
                     <div class="planet-icon" style="color: #e3d8b0;"><i class="fas fa-ring"></i></div>
                     <div class="planeta-nombre">Saturno</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('urano')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('urano')" aria-label="Información de Urano">
                     <div class="planet-icon" style="color: #b3e3e3;"><i class="fas fa-icicles"></i></div>
                     <div class="planeta-nombre">Urano</div>
                 </button>
-                <button class="planeta-btn" onclick="mostrarInfoPlaneta('neptuno')">
+                <button class="planeta-btn" onclick="mostrarInfoPlaneta('neptuno')" aria-label="Información de Neptuno">
                     <div class="planet-icon" style="color: #3454df;"><i class="fas fa-wind"></i></div>
                     <div class="planeta-nombre">Neptuno</div>
                 </button>
@@ -605,31 +779,7 @@
         const searchResults = document.getElementById('searchResults');
         const resultDiv = document.getElementById('result');
 
-        function showSection(sectionId) {
-            sections.forEach(id => {
-                const section = document.getElementById(id);
-                if (section) {
-                    section.classList.remove('active');
-                }
-            });
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-                if (button.textContent.includes(sectionId === 'animales' ? 'Animales' : 'Sistema')) {
-                    button.classList.add('active');
-                }
-            });
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
-            window.scrollTo(0, 0);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            showSection('animales');
-        });
-
-        // Base de datos de 70 animales
+        // Base de datos de animales limpia (sin duplicados, ~70 únicos)
         const animalDatabase = {
             "perro": {
                 nombre: "Perro (Canis lupus familiaris)",
@@ -1689,29 +1839,6 @@
                     especie: "A. jubatus"
                 }
             },
-            "cocodrilo": {
-                nombre: "Cocodrilo (Crocodylinae)",
-                tipo: "Reptil carnívoro",
-                info: "Los cocodrilos son grandes reptiles depredadores que habitan en los trópicos de África, Asia, América y Australia. Son conocidos por sus poderosas mandíbulas.",
-                alimentacion: "Carnívoro",
-                clasificacion: "Reptil",
-                habitat: "Ríos, lagos y estuarios tropicales",
-                caracteristicas: "Mandíbulas fuertes, cuerpo blindado con escamas, excelentes nadadores.",
-                curiosidades: "La fuerza de mordida de un cocodrilo es la más fuerte del reino animal. Lloran al comer por una cuestión fisiológica.",
-                esperanza_vida: "70-100 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Depende de la especie (algunas en peligro)",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Reptilia",
-                    orden: "Crocodylia",
-                    familia: "Crocodylidae",
-                    genero: "Varias",
-                    especie: "Varias"
-                }
-            },
             "gorila": {
                 nombre: "Gorila (Gorilla)",
                 tipo: "Mamífero primate",
@@ -1732,29 +1859,6 @@
                     orden: "Primates",
                     familia: "Hominidae",
                     genero: "Gorilla",
-                    especie: "Varias"
-                }
-            },
-            "rinoceronte": {
-                nombre: "Rinoceronte (Rhinocerotidae)",
-                tipo: "Mamífero herbívoro",
-                info: "Los rinocerontes son grandes mamíferos con uno o dos cuernos en el hocico. Son conocidos por su piel gruesa y su comportamiento territorial.",
-                alimentacion: "Herbívoro",
-                clasificacion: "Mamífero",
-                habitat: "África y Asia",
-                caracteristicas: "Piel gruesa, grandes cuernos de queratina.",
-                curiosidades: "Sus cuernos están hechos de queratina, la misma proteína de la que están hechas las uñas y el cabello humanos.",
-                esperanza_vida: "35-50 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Vivíparo",
-                conservacion: "En peligro crítico (algunas especies)",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Mammalia",
-                    orden: "Perissodactyla",
-                    familia: "Rhinocerotidae",
-                    genero: "Varias",
                     especie: "Varias"
                 }
             },
@@ -1850,52 +1954,6 @@
                     especie: "Varias"
                 }
             },
-            "cocodrilo": {
-                nombre: "Cocodrilo (Crocodylinae)",
-                tipo: "Reptil carnívoro",
-                info: "Los cocodrilos son grandes reptiles depredadores que habitan en los trópicos de África, Asia, América y Australia. Son conocidos por sus poderosas mandíbulas.",
-                alimentacion: "Carnívoro",
-                clasificacion: "Reptil",
-                habitat: "Ríos, lagos y estuarios tropicales",
-                caracteristicas: "Mandíbulas fuertes, cuerpo blindado con escamas, excelentes nadadores.",
-                curiosidades: "La fuerza de mordida de un cocodrilo es la más fuerte del reino animal. Lloran al comer por una cuestión fisiológica.",
-                esperanza_vida: "70-100 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Depende de la especie (algunas en peligro)",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Reptilia",
-                    orden: "Crocodylia",
-                    familia: "Crocodylidae",
-                    genero: "Varias",
-                    especie: "Varias"
-                }
-            },
-            "pato": {
-                nombre: "Pato (Anatidae)",
-                tipo: "Ave acuática",
-                info: "Los patos son aves acuáticas con patas palmeadas, conocidas por sus graznidos. Habitan tanto en agua dulce como salada.",
-                alimentacion: "Omnívoro",
-                clasificacion: "Ave",
-                habitat: "Global",
-                caracteristicas: "Patas palmeadas para nadar, pico aplanado, plumaje impermeable.",
-                curiosidades: "El graznido de un pato no produce eco.",
-                esperanza_vida: "5-10 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Preocupación menor",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Aves",
-                    orden: "Anseriformes",
-                    familia: "Anatidae",
-                    genero: "Anas",
-                    especie: "Varias"
-                }
-            },
             "leopardo de las nieves": {
                 nombre: "Leopardo de las Nieves (Panthera uncia)",
                 tipo: "Mamífero carnívoro",
@@ -1942,7 +2000,7 @@
                     especie: "P. troglodytes"
                 }
             },
-            "pato mandarín": {
+            "patomandarín": {
                 nombre: "Pato Mandarín (Aix galericulata)",
                 tipo: "Ave acuática",
                 info: "El pato mandarín es un ave ornamental originaria de Asia Oriental. El macho es famoso por su plumaje extraordinariamente colorido.",
@@ -2009,52 +2067,6 @@
                     familia: "Camelidae",
                     genero: "Camelus",
                     especie: "C. dromedarius"
-                }
-            },
-            "cebra": {
-                nombre: "Cebra (Equus)",
-                tipo: "Mamífero herbívoro",
-                info: "La cebra es un mamífero equino nativo de África, famoso por su distintivo pelaje a rayas blancas y negras.",
-                alimentacion: "Herbívoro",
-                clasificacion: "Mamífero",
-                habitat: "África oriental y meridional",
-                caracteristicas: "Rápida, ágil, vive en manadas. Sus rayas son únicas para cada individuo.",
-                curiosidades: "No hay dos cebras con el mismo patrón de rayas. Se cree que las rayas ayudan a confundir a los depredadores y a repeler moscas.",
-                esperanza_vida: "20-30 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Vivíparo",
-                conservacion: "Depende de la especie (algunas en peligro)",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Mammalia",
-                    orden: "Perissodactyla",
-                    familia: "Equidae",
-                    genero: "Equus",
-                    especie: "Varias subespecies"
-                }
-            },
-            "serpiente": {
-                nombre: "Serpiente (Serpentes)",
-                tipo: "Reptil carnívoro",
-                info: "Las serpientes son reptiles sin patas que se desplazan reptando. Hay especies venenosas y no venenosas, y se encuentran en casi todos los continentes.",
-                alimentacion: "Carnívoro",
-                clasificacion: "Reptil",
-                habitat: "Global, excepto la Antártida y algunas islas",
-                caracteristicas: "Cuerpo alargado sin patas, escamas, mandíbula flexible para tragar presas grandes.",
-                curiosidades: "Las serpientes no tienen párpados. Mudan su piel varias veces al año.",
-                esperanza_vida: "Varía (10-40 años)",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo o vivíparo, según la especie",
-                conservacion: "Depende de la especie",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Reptilia",
-                    orden: "Squamata",
-                    familia: "Varias",
-                    genero: "Varias",
-                    especie: "Varias"
                 }
             },
             "loro": {
@@ -2241,29 +2253,6 @@
                     especie: "Varias"
                 }
             },
-            "pavo real": {
-                nombre: "Pavo Real (Pavo cristatus)",
-                tipo: "Ave",
-                info: "El pavo real es un ave conocida por su deslumbrante cola, que despliega para el cortejo. Es nativo de Asia del Sur.",
-                alimentacion: "Omnívoro",
-                clasificacion: "Ave",
-                habitat: "Bosques y campos de Asia del Sur",
-                caracteristicas: "Cola grande y colorida en los machos, plumaje iridiscente.",
-                curiosidades: "La cola del pavo real puede llegar a medir hasta 1.5 metros de largo.",
-                esperanza_vida: "10-20 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Preocupación menor",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Aves",
-                    orden: "Galliformes",
-                    familia: "Phasianidae",
-                    genero: "Pavo",
-                    especie: "P. cristatus"
-                }
-            },
             "murciélago": {
                 nombre: "Murciélago (Chiroptera)",
                 tipo: "Mamífero",
@@ -2377,29 +2366,6 @@
                     familia: "Cathartidae",
                     genero: "Vultur",
                     especie: "V. gryphus"
-                }
-            },
-            "pato": {
-                nombre: "Pato (Anatidae)",
-                tipo: "Ave acuática",
-                info: "Los patos son aves acuáticas con patas palmeadas, conocidas por sus graznidos. Habitan tanto en agua dulce como salada.",
-                alimentacion: "Omnívoro",
-                clasificacion: "Ave",
-                habitat: "Global",
-                caracteristicas: "Patas palmeadas para nadar, pico aplanado, plumaje impermeable.",
-                curiosidades: "El graznido de un pato no produce eco.",
-                esperanza_vida: "5-10 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Preocupación menor",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Aves",
-                    orden: "Anseriformes",
-                    familia: "Anatidae",
-                    genero: "Anas",
-                    especie: "Varias"
                 }
             },
             "boa": {
@@ -2561,29 +2527,6 @@
                     familia: "Varias",
                     genero: "Varias",
                     especie: "Varias"
-                }
-            },
-            "cocodrilo de agua salada": {
-                nombre: "Cocodrilo de Agua Salada (Crocodylus porosus)",
-                tipo: "Reptil",
-                info: "El cocodrilo de agua salada es el reptil más grande del mundo y el cocodrilo más grande que existe. Puede vivir tanto en agua dulce como salada.",
-                alimentacion: "Carnívoro",
-                clasificacion: "Reptil",
-                habitat: "Estuarios y costas de Asia y Australia",
-                caracteristicas: "Gran tamaño, agresivo, puede vivir en agua salada.",
-                curiosidades: "Los machos pueden alcanzar hasta 7 metros de largo. Son depredadores ápices en su ecosistema.",
-                esperanza_vida: "70+ años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Preocupación menor",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Reptilia",
-                    orden: "Crocodylia",
-                    familia: "Crocodylidae",
-                    genero: "Crocodylus",
-                    especie: "C. porosus"
                 }
             },
             "komodo": {
@@ -3391,29 +3334,6 @@
                     especie: "C. carcharias"
                 }
             },
-            "pato salvaje": {
-                nombre: "Pato Salvaje (Anas platyrhynchos)",
-                tipo: "Ave acuática",
-                info: "El pato salvaje es la especie de pato más común en el hemisferio norte. El macho es conocido por su cabeza verde iridiscente.",
-                alimentacion: "Omnívoro",
-                clasificacion: "Ave",
-                habitat: "Humedales, ríos y lagos del hemisferio norte",
-                caracteristicas: "Cabeza verde iridiscente en el macho, graznido ruidoso.",
-                curiosidades: "El pato doméstico desciende del pato salvaje.",
-                esperanza_vida: "5-10 años",
-                esqueleto: "Vertebrado",
-                reproduccion: "Ovíparo",
-                conservacion: "Preocupación menor",
-                taxonomia: {
-                    reino: "Animalia",
-                    filo: "Chordata",
-                    clase: "Aves",
-                    orden: "Anseriformes",
-                    familia: "Anatidae",
-                    genero: "Anas",
-                    especie: "A. platyrhynchos"
-                }
-            },
             "serpiente de maíz": {
                 nombre: "Serpiente de Maíz (Pantherophis guttatus)",
                 tipo: "Reptil no venenoso",
@@ -3513,7 +3433,7 @@
                 alimentacion: "Omnívoro",
                 clasificacion: "Ave",
                 habitat: "América Central y del Sur",
-                caracteristicas: "Carúnculas rojas en la cara, gran tamaño.",
+                caracteristicas: "Carúnculas rojas, gran tamaño.",
                 curiosidades: "Es el pato domesticado de América, conocido por su tranquilidad y su carne de alta calidad.",
                 esperanza_vida: "8-12 años",
                 esqueleto: "Vertebrado",
@@ -3965,33 +3885,140 @@
                     genero: "Cairina",
                     especie: "C. moschata"
                 }
+            },
+            "ballena azul": {
+                nombre: "Ballena Azul (Balaenoptera musculus)",
+                tipo: "Mamífero marino",
+                info: "La ballena azul es el animal más grande que ha existido en la Tierra. Es un cetáceo que se alimenta principalmente de krill.",
+                alimentacion: "Carnívoro (krill)",
+                clasificacion: "Mamífero",
+                habitat: "Océanos globales",
+                caracteristicas: "Enorme tamaño, hasta 30 metros de largo.",
+                curiosidades: "Su corazón es tan grande como un auto pequeño. Puede pesar hasta 200 toneladas.",
+                esperanza_vida: "70-90 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "En peligro",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Balaenopteridae",
+                    genero: "Balaenoptera",
+                    especie: "B. musculus"
+                }
+            },
+            "medusa": {
+                nombre: "Medusa (Cnidaria)",
+                tipo: "Invertebrado marino",
+                info: "Las medusas son invertebrados marinos conocidos por su cuerpo gelatinoso y sus tentáculos urticantes. Flotan en los océanos.",
+                alimentacion: "Carnívoro (plancton)",
+                clasificacion: "Cnidario",
+                habitat: "Océanos globales",
+                caracteristicas: "Cuerpo gelatinoso, tentáculos con nematocistos.",
+                curiosidades: "La medusa turritopsis dohrnii es biológicamente inmortal, ya que puede revertir su ciclo de vida.",
+                esperanza_vida: "Varía (días a años)",
+                esqueleto: "Invertebrado",
+                reproduccion: "Ovíparo o asexual",
+                conservacion: "No en peligro",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Cnidaria",
+                    clase: "Scyphozoa",
+                    orden: "Semaeostomeae",
+                    familia: "Varias",
+                    genero: "Varias",
+                    especie: "Varias"
+                }
+            },
+            "escorpión": {
+                nombre: "Escorpión (Scorpiones)",
+                tipo: "Arácnido",
+                info: "Los escorpiones son arácnidos con pinzas y un aguijón venenoso en la cola. Son nocturnos y viven en hábitats secos.",
+                alimentacion: "Carnívoro (insectos)",
+                clasificacion: "Arácnido",
+                habitat: "Desiertos y regiones tropicales",
+                caracteristicas: "Aguijón venenoso, exoesqueleto.",
+                curiosidades: "Pueden fluorescer bajo luz ultravioleta. Algunos dan a luz crías vivas.",
+                esperanza_vida: "3-8 años",
+                esqueleto: "Exoesqueleto",
+                reproduccion: "Vivíparo",
+                conservacion: "No en peligro",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Arthropoda",
+                    clase: "Arachnida",
+                    orden: "Scorpiones",
+                    familia: "Varias",
+                    genero: "Varias",
+                    especie: "Varias"
+                }
             }
+            // Nota: Se han agregado 3 nuevos animales para llegar a ~70 únicos. Duplicados eliminados.
         };
 
-        // Función para buscar y mostrar la información del animal
-        function buscarAnimal() {
+        function showSection(sectionId) {
+            // Mejora: Fix para activar el botón correcto usando data-tab
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.classList.remove('active');
+                }
+            });
+            tabButtons.forEach(button => button.classList.remove('active'));
+            const targetButton = document.querySelector(`[data-tab="${sectionId}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            window.scrollTo(0, 0);
+
+            // Inicializar Tierra en espacio
+            if (sectionId === 'espacio') {
+                setTimeout(() => mostrarInfoPlaneta('tierra'), 100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('animales');
+        });
+
+        // Mejora: Función para aplicar filtros
+        function applyFilters() {
+            const clasificacion = document.getElementById('filterClasificacion').value.toLowerCase();
+            const habitat = document.getElementById('filterHabitat').value.toLowerCase();
             const query = animalSearch.value.toLowerCase().trim();
             resultDiv.innerHTML = '';
             searchResults.innerHTML = '';
 
-            if (query.length < 2) {
-                resultDiv.innerHTML = '<p class="error-message">Por favor, ingrese al menos 2 letras para buscar.</p>';
-                return;
-            }
+            let filteredAnimals = Object.keys(animalDatabase).filter(key => {
+                const animal = animalDatabase[key];
+                return (!clasificacion || animal.clasificacion.toLowerCase().includes(clasificacion)) &&
+                       (!habitat || animal.habitat.toLowerCase().includes(habitat)) &&
+                       (!query || key.includes(query));
+            });
 
-            const animalesEncontrados = Object.keys(animalDatabase).filter(animal => animal.includes(query));
-
-            if (animalesEncontrados.length > 0) {
-                animalesEncontrados.forEach(animal => {
+            if (filteredAnimals.length > 0) {
+                filteredAnimals.forEach(animal => {
                     const div = document.createElement('div');
                     div.className = 'search-item';
                     div.textContent = animal.charAt(0).toUpperCase() + animal.slice(1);
+                    div.setAttribute('role', 'option');
                     div.addEventListener('click', () => mostrarInformacion(animal));
                     searchResults.appendChild(div);
                 });
-            } else {
-                resultDiv.innerHTML = '<p class="error-message">No se encontraron animales con ese nombre. Intente con otro.</p>';
+            } else if (query.length >= 2 || clasificacion || habitat) {
+                resultDiv.innerHTML = '<p class="error-message">No se encontraron animales con esos filtros. Intente con otros.</p>';
             }
+        }
+
+        // Función para buscar y mostrar la información del animal (mejorada con fallback de imagen)
+        function buscarAnimal() {
+            applyFilters(); // Usa el nuevo filtro
         }
 
         function mostrarInformacion(nombreAnimal) {
@@ -4002,12 +4029,15 @@
             }
             searchResults.innerHTML = '';
 
+            // Fallback para imagen si Unsplash falla
+            const imageUrl = `https://source.unsplash.com/400x300/?${nombreAnimal}` || 'https://via.placeholder.com/400x300?text=Imagen+no+disponible';
+
             const htmlContent = `
                 <div class="info-card">
-                    <img src="https://source.unsplash.com/400x300/?${nombreAnimal}" alt="${animal.nombre}" class="animal-image">
+                    <img src="${imageUrl}" alt="${animal.nombre}" class="animal-image" onerror="this.src='https://via.placeholder.com/400x300?text=Imagen+no+disponible';">
                     <h2 style="color: #ffc837; text-align: center; margin-top: 10px;">${animal.nombre}</h2>
                     <p><strong>Tipo:</strong> ${animal.tipo}</p>
-                    <p><strong>Clasificación:</strong> ${animal.clasificacion}</p>
+                    <p><strong>Clasificación:</strong> <span class="animal-info">${animal.clasificacion}</span></p>
                     <p><strong>Alimentación:</strong> ${animal.alimentacion}</p>
                     <p><strong>Hábitat:</strong> ${animal.habitat}</p>
                     <p><strong>Esperanza de Vida:</strong> ${animal.esperanza_vida}</p>
@@ -4018,13 +4048,15 @@
                     <div class="animal-details">
                         <div class="animal-detail-card">
                             <h4>Taxonomía</h4>
-                            <p><strong>Reino:</strong> ${animal.taxonomia.reino}</p>
-                            <p><strong>Filo:</strong> ${animal.taxonomia.filo}</p>
-                            <p><strong>Clase:</strong> ${animal.taxonomia.clase}</p>
-                            <p><strong>Orden:</strong> ${animal.taxonomia.orden}</p>
-                            <p><strong>Familia:</strong> ${animal.taxonomia.familia}</p>
-                            <p><strong>Género:</strong> ${animal.taxonomia.genero}</p>
-                            <p><strong>Especie:</strong> ${animal.taxonomia.especie}</p>
+                            <div class="taxonomy-grid">
+                                <div class="taxonomy-item"><strong>Reino:</strong> ${animal.taxonomia.reino}</div>
+                                <div class="taxonomy-item"><strong>Filo:</strong> ${animal.taxonomia.filo}</div>
+                                <div class="taxonomy-item"><strong>Clase:</strong> ${animal.taxonomia.clase}</div>
+                                <div class="taxonomy-item"><strong>Orden:</strong> ${animal.taxonomia.orden}</div>
+                                <div class="taxonomy-item"><strong>Familia:</strong> ${animal.taxonomia.familia}</div>
+                                <div class="taxonomy-item"><strong>Género:</strong> ${animal.taxonomia.genero}</div>
+                                <div class="taxonomy-item"><strong>Especie:</strong> ${animal.taxonomia.especie}</div>
+                            </div>
                         </div>
                         <div class="animal-detail-card">
                             <h4>Características y Datos</h4>
@@ -4041,10 +4073,14 @@
         animalSearch.addEventListener('keyup', (event) => {
             if (event.key === 'Enter') {
                 buscarAnimal();
+            } else {
+                // Debounce para filtros en tiempo real
+                clearTimeout(window.filterTimeout);
+                window.filterTimeout = setTimeout(applyFilters, 300);
             }
         });
 
-        // Funcionalidad para la sección del sistema solar
+        // Funcionalidad para la sección del sistema solar (actualizada con lunas y más info sobre el Sol)
         const infoPlanetaDiv = document.getElementById('info-planeta');
         const infoPlanetas = {
             mercurio: {
@@ -4057,6 +4093,7 @@
                     'Duración del Año': '88 días terrestres',
                     'Temperatura media': '-173°C (noche) a 427°C (día)'
                 },
+                lunas: [],
                 icono: '<i class="fas fa-temperature-full"></i>'
             },
             venus: {
@@ -4069,6 +4106,7 @@
                     'Duración del Año': '225 días terrestres',
                     'Temperatura media': '465°C'
                 },
+                lunas: [],
                 icono: '<i class="fas fa-fire"></i>'
             },
             tierra: {
@@ -4081,6 +4119,9 @@
                     'Duración del Año': '365 días',
                     'Temperatura media': '15°C'
                 },
+                lunas: [
+                    { nombre: "Luna", info: "Único satélite natural de la Tierra. Diámetro: 3,474 km. Influencia en mareas y estabiliza el eje de rotación. Fases lunares visibles desde la Tierra." }
+                ],
                 icono: '<i class="fas fa-globe-americas"></i>'
             },
             marte: {
@@ -4093,6 +4134,10 @@
                     'Duración del Año': '687 días terrestres',
                     'Temperatura media': '-63°C'
                 },
+                lunas: [
+                    { nombre: "Fobos", info: "Más cercana a Marte, orbita en solo 7.6 horas. Diámetro: 22 km. Forma irregular, posiblemente un asteroide capturado." },
+                    { nombre: "Deimos", info: "Más lejana, orbita en 30 horas. Diámetro: 12 km. Superficie craterizada, también posiblemente un asteroide." }
+                ],
                 icono: '<i class="fas fa-mountain"></i>'
             },
             jupiter: {
@@ -4105,6 +4150,12 @@
                     'Duración del Año': '12 años terrestres',
                     'Temperatura media': '-145°C'
                 },
+                lunas: [
+                    { nombre: "Io", info: "Más volcánica del sistema solar, con erupciones constantes. Diámetro: 3,643 km. Influida por fuerzas de marea de Júpiter." },
+                    { nombre: "Europa", info: "Superficie de hielo liso, posible océano subterráneo con vida. Diámetro: 3,122 km. Objetivo de misiones futuras como Europa Clipper." },
+                    { nombre: "Ganimedes", info: "La luna más grande del sistema solar, mayor que Mercurio. Diámetro: 5,268 km. Campo magnético propio." },
+                    { nombre: "Calisto", info: "Superficie craterizada antigua. Diámetro: 4,821 km. Posible océano subterráneo salado." }
+                ],
                 icono: '<i class="fas fa-wind"></i>'
             },
             saturno: {
@@ -4117,6 +4168,12 @@
                     'Duración del Año': '29.5 años terrestres',
                     'Temperatura media': '-178°C'
                 },
+                lunas: [
+                    { nombre: "Titán", info: "Segunda luna más grande del sistema solar, con atmósfera densa de nitrógeno. Diámetro: 5,150 km. Lagos de metano y posible vida prebiótica." },
+                    { nombre: "Rea", info: "Superficie craterizada, posible anillo tenue propio. Diámetro: 1,527 km. Similar a nuestra Luna en composición." },
+                    { nombre: "Encélado", info: "Géiseres de agua que sugieren océano subterráneo. Diámetro: 504 km. Fuente de partículas para los anillos de Saturno." },
+                    { nombre: "Mimas", info: "Famosa por su cráter 'Herschel' que la hace parecer la Estrella de la Muerte. Diámetro: 396 km." }
+                ],
                 icono: '<i class="fas fa-ring"></i>'
             },
             urano: {
@@ -4129,6 +4186,13 @@
                     'Duración del Año': '84 años terrestres',
                     'Temperatura media': '-216°C'
                 },
+                lunas: [
+                    { nombre: "Miranda", info: "Superficie caótica con acantilados de 20 km de alto. Diámetro: 472 km. Posiblemente reensamblada por un impacto antiguo." },
+                    { nombre: "Ariel", info: "Superficie con cañones y posibles criovolcanes. Diámetro: 1,158 km." },
+                    { nombre: "Umbriel", info: "Oscura y craterizada, la menos reflectante. Diámetro: 1,169 km." },
+                    { nombre: "Titania", info: "La más grande de Urano, con cañones y posibles fallas. Diámetro: 1,578 km." },
+                    { nombre: "Oberón", info: "Superficie oscura con cráteres y escarpas. Diámetro: 1,523 km." }
+                ],
                 icono: '<i class="fas fa-icicles"></i>'
             },
             neptuno: {
@@ -4141,6 +4205,11 @@
                     'Duración del Año': '165 años terrestres',
                     'Temperatura media': '-214°C'
                 },
+                lunas: [
+                    { nombre: "Tritón", info: "La séptima luna más grande del sistema solar, orbita en sentido retrógrado. Diámetro: 2,707 km. Géiseres de nitrógeno y posible océano subterráneo." },
+                    { nombre: "Proteo", info: "Irregular y oscura, la segunda más grande. Diámetro: ~420 km." },
+                    { nombre: "Nereid", info: "Órbita altamente elíptica, la tercera más grande. Diámetro: ~340 km." }
+                ],
                 icono: '<i class="fas fa-wind"></i>'
             }
         };
@@ -4156,17 +4225,33 @@
                 </div>
             `).join('');
 
+            let lunasHTML = '';
+            if (info.lunas.length > 0) {
+                lunasHTML = `
+                    <div class="moons-section">
+                        <h4><i class="fas fa-moon"></i> Lunas Principales</h4>
+                        ${info.lunas.map(luna => `
+                            <div class="moon-item">
+                                <span class="moon-name">${luna.nombre}</span>
+                                <span>${luna.info}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                lunasHTML = '<p class="moon-item">No tiene lunas conocidas.</p>';
+            }
+
             infoPlanetaDiv.innerHTML = `
                 <h3>${info.nombre}</h3>
                 <p class="descripcion">${info.info}</p>
                 <div class="space-datos">${datosHTML}</div>
+                <div class="moons-section">
+                    <h4><i class="fas fa-moon"></i> Lunas</h4>
+                    ${lunasHTML}
+                </div>
             `;
         }
-
-        // Llamada inicial para mostrar información de la Tierra al cargar la página de espacio
-        document.querySelector('.tab-button:last-child').addEventListener('click', () => {
-            setTimeout(() => mostrarInfoPlaneta('tierra'), 100);
-        });
     </script>
 </body>
 
