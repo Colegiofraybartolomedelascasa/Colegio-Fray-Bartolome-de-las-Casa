@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -569,6 +568,85 @@
         .planet-urano { width: 25px; height: 25px; background: #b3e3e3; animation-duration: 30s; top: 0; left: 350px; }
         .planet-neptuno { width: 25px; height: 25px; background: #3454df; animation-duration: 35s; top: 0; left: 400px; }
 
+        /* Estilos para el calendario astronómico */
+        .calendar-section {
+            background: rgba(18, 18, 51, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+            border: 1px solid #00f3ff;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .calendar-section h2 {
+            color: #00f3ff;
+            text-shadow: 0 0 10px #00f3ff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-search {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #monthSearch {
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            width: 300px;
+        }
+
+        .month {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #00f3ff;
+            display: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .month.visible {
+            display: block;
+        }
+
+        .month h3 {
+            color: #ffc837;
+            margin-bottom: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .month ul {
+            list-style-type: none;
+            padding: 0;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .month.active ul {
+            display: block; /* Mostrar al activar */
+        }
+
+        .month li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .month li:last-child {
+            border-bottom: none;
+        }
+
         /* Estilos responsivos */
         @media (max-width: 768px) {
             .header-main h1 {
@@ -604,6 +682,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .calendar-search {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #monthSearch {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -636,6 +723,7 @@
         <div class="tab-menu" role="tablist">
             <button class="tab-button active" data-tab="animales" aria-label="Identificador de Animales" onclick="showSection('animales')">Identificador de Animales</button>
             <button class="tab-button" data-tab="espacio" aria-label="Explorador del Sistema Solar" onclick="showSection('espacio')">Explorador del Sistema Solar</button>
+            <button class="tab-button" data-tab="calendario" aria-label="Calendario Astronómico" onclick="showSection('calendario')">Calendario Astronómico</button>
         </div>
 
         <div id="animales" class="content-section active" role="tabpanel">
@@ -769,17 +857,193 @@
                 <p class="descripcion">Selecciona un planeta para conocer información detallada sobre él, incluyendo su tamaño, composición, características únicas y datos curiosos.</p>
             </div>
         </div>
+
+        <div id="calendario" class="content-section" role="tabpanel">
+            <h1>Calendario Astronómico y Lunar</h1>
+            <div class="calendar-section">
+                <h2><i class="fas fa-calendar-alt"></i> Calendario Astronómico y Lunar (2025-2026)</h2>
+                <p style="text-align: center; color: #b0b0b0;">Eventos principales, fases lunares, eclipses y lluvias de meteoros. Desde octubre 2025 hasta diciembre 2026.</p>
+                <div class="calendar-search">
+                    <input type="text" id="monthSearch" placeholder="Buscar mes (ej: Enero, Febrero)..." aria-label="Buscar mes">
+                </div>
+                <div class="month visible" data-month="octubre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Octubre 2025</h3>
+                    <ul>
+                        <li>6 de octubre: Luna cerca de Saturno y Neptuno</li>
+                        <li>7 de octubre: Luna Llena (Superluna)</li>
+                        <li>10 de octubre: Luna cerca de las Pléyades</li>
+                        <li>13 de octubre: Luna cerca de Júpiter</li>
+                        <li>19 de octubre: Luna cerca de Venus</li>
+                        <li>19 de octubre: Conjunciòn Mercurio-Marte</li>
+                        <li>20-21 de octubre: Pico de las Oriónidas (lluvia de meteoros)</li>
+                        <li>21 de octubre: Luna Nueva</li>
+                        <li>23 de octubre: Luna cerca de Marte y Mercurio</li>
+                        <li>29 de octubre: Mercurio en mayor elongación este</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="noviembre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Noviembre 2025</h3>
+                    <ul>
+                        <li>2 de noviembre: Luna cerca de Saturno y Neptuno</li>
+                        <li>4-5 de noviembre: Pico de las Táuridas del Sur (lluvia de meteoros)</li>
+                        <li>5 de noviembre: Luna Llena (Superluna, la más grande del año)</li>
+                        <li>6 de noviembre: Luna cerca de las Pléyades</li>
+                        <li>10 de noviembre: Luna cerca de Júpiter</li>
+                        <li>11-12 de noviembre: Pico de las Táuridas del Norte (lluvia de meteoros)</li>
+                        <li>17-18 de noviembre: Pico de las Leónidas (lluvia de meteoros)</li>
+                        <li>20 de noviembre: Luna Nueva</li>
+                        <li>21 de noviembre: Urano en oposición</li>
+                        <li>29 de noviembre: Luna cerca de Saturno</li>
+                        <li>30 de noviembre: Luna cerca de Neptuno</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="diciembre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Diciembre 2025</h3>
+                    <ul>
+                        <li>4 de diciembre: Luna cerca de las Pléyades y Luna Llena (Superluna)</li>
+                        <li>7 de diciembre: Mercurio en mayor elongación oeste; Luna cerca de Júpiter</li>
+                        <li>13-14 de diciembre: Pico de las Gemínidas (lluvia de meteoros)</li>
+                        <li>20 de diciembre: Luna Nueva</li>
+                        <li>21 de diciembre: Solsticio de invierno</li>
+                        <li>22-23 de diciembre: Pico de las Úrsidas (lluvia de meteoros)</li>
+                        <li>27 de diciembre: Luna cerca de Saturno y Neptuno</li>
+                        <li>31 de diciembre: Luna cerca de las Pléyades</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="enero">
+                    <h3 onclick="toggleMonth(this.parentElement)">Enero 2026</h3>
+                    <ul>
+                        <li>3 de enero: Luna Llena (Luna de Lobo)</li>
+                        <li>13 de enero: Cuarto menguante</li>
+                        <li>18 de enero: Luna Nueva</li>
+                        <li>25 de enero: Cuarto creciente</li>
+                        <li>3 de enero: Pico de las Cuadrántidas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="febrero">
+                    <h3 onclick="toggleMonth(this.parentElement)">Febrero 2026</h3>
+                    <ul>
+                        <li>1 de febrero: Luna Llena (Luna de Nieve)</li>
+                        <li>9 de febrero: Cuarto menguante</li>
+                        <li>17 de febrero: Luna Nueva y Eclipse solar anular (visible en Antártida, parcial en Argentina, Chile y África)</li>
+                        <li>24 de febrero: Cuarto creciente</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="marzo">
+                    <h3 onclick="toggleMonth(this.parentElement)">Marzo 2026</h3>
+                    <ul>
+                        <li>3 de marzo: Luna Llena y Eclipse lunar total (visible en Asia, Australia, Pacífico y América)</li>
+                        <li>11 de marzo: Cuarto menguante</li>
+                        <li>19 de marzo: Luna Nueva</li>
+                        <li>25 de marzo: Cuarto creciente</li>
+                        <li>20 de marzo: Equinoccio de primavera</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="abril">
+                    <h3 onclick="toggleMonth(this.parentElement)">Abril 2026</h3>
+                    <ul>
+                        <li>2 de abril: Luna Llena (Luna Rosa)</li>
+                        <li>10 de abril: Cuarto menguante</li>
+                        <li>17 de abril: Luna Nueva</li>
+                        <li>26 de abril: Cuarto creciente</li>
+                        <li>22 de abril: Pico de las Líridas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="mayo">
+                    <h3 onclick="toggleMonth(this.parentElement)">Mayo 2026</h3>
+                    <ul>
+                        <li>1 de mayo: Luna Llena (Luna de las Flores)</li>
+                        <li>9 de mayo: Cuarto menguante</li>
+                        <li>16 de mayo: Luna Nueva</li>
+                        <li>24 de mayo: Cuarto creciente</li>
+                        <li>5-6 de mayo: Pico de las Eta Acuáridas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="junio">
+                    <h3 onclick="toggleMonth(this.parentElement)">Junio 2026</h3>
+                    <ul>
+                        <li>30 de junio: Luna Llena (Luna de Fresa)</li>
+                        <li>8 de junio: Cuarto menguante</li>
+                        <li>15 de junio: Luna Nueva</li>
+                        <li>22 de junio: Cuarto creciente</li>
+                        <li>21 de junio: Solsticio de verano</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="julio">
+                    <h3 onclick="toggleMonth(this.parentElement)">Julio 2026</h3>
+                    <ul>
+                        <li>29 de julio: Luna Llena (Luna de Ciervo)</li>
+                        <li>7 de julio: Cuarto menguante</li>
+                        <li>14 de julio: Luna Nueva</li>
+                        <li>21 de julio: Cuarto creciente</li>
+                        <li>28-29 de julio: Pico de las Delta Acuáridas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="agosto">
+                    <h3 onclick="toggleMonth(this.parentElement)">Agosto 2026</h3>
+                    <ul>
+                        <li>28 de agosto: Luna Llena y Eclipse lunar parcial (visible en Pacífico, América, Europa y África)</li>
+                        <li>6 de agosto: Cuarto menguante</li>
+                        <li>12 de agosto: Luna Nueva y Eclipse solar total (visible en Ártico, Groenlandia, Islandia y España)</li>
+                        <li>19 de agosto: Cuarto creciente</li>
+                        <li>12-13 de agosto: Pico de las Perseidas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="septiembre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Septiembre 2026</h3>
+                    <ul>
+                        <li>26 de septiembre: Luna Llena (Luna de Maíz)</li>
+                        <li>4 de septiembre: Cuarto menguante</li>
+                        <li>11 de septiembre: Luna Nueva</li>
+                        <li>18 de septiembre: Cuarto creciente</li>
+                        <li>22 de septiembre: Equinoccio de otoño</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="octubre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Octubre 2026</h3>
+                    <ul>
+                        <li>26 de octubre: Luna Llena (Luna de Cazador)</li>
+                        <li>3 de octubre: Cuarto menguante</li>
+                        <li>10 de octubre: Luna Nueva</li>
+                        <li>18 de octubre: Cuarto creciente</li>
+                        <li>20-21 de octubre: Pico de las Oriónidas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="noviembre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Noviembre 2026</h3>
+                    <ul>
+                        <li>24 de noviembre: Luna Llena (Luna del Castor, Superluna)</li>
+                        <li>2 de noviembre: Cuarto menguante</li>
+                        <li>9 de noviembre: Luna Nueva</li>
+                        <li>17 de noviembre: Cuarto creciente</li>
+                        <li>17-18 de noviembre: Pico de las Leónidas (lluvia de meteoros)</li>
+                    </ul>
+                </div>
+                <div class="month visible" data-month="diciembre">
+                    <h3 onclick="toggleMonth(this.parentElement)">Diciembre 2026</h3>
+                    <ul>
+                        <li>24 de diciembre: Luna Llena (Luna Fría, Superluna)</li>
+                        <li>1 de diciembre: Cuarto menguante</li>
+                        <li>8 de diciembre: Luna Nueva</li>
+                        <li>16 de diciembre: Cuarto creciente</li>
+                        <li>13-14 de diciembre: Pico de las Gemínidas (lluvia de meteoros)</li>
+                        <li>21 de diciembre: Solsticio de invierno</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        const sections = ['animales', 'espacio'];
+        const sections = ['animales', 'espacio', 'calendario'];
         const tabButtons = document.querySelectorAll('.tab-button');
         const animalSearch = document.getElementById('animalSearch');
         const searchButton = document.getElementById('searchButton');
         const searchResults = document.getElementById('searchResults');
         const resultDiv = document.getElementById('result');
+        const monthSearch = document.getElementById('monthSearch');
 
-        // Base de datos de animales limpia (sin duplicados, ~70 únicos)
+        // Base de datos completa de animales
         const animalDatabase = {
             "perro": {
                 nombre: "Perro (Canis lupus familiaris)",
@@ -3955,11 +4219,9 @@
                     especie: "Varias"
                 }
             }
-            // Nota: Se han agregado 3 nuevos animales para llegar a ~70 únicos. Duplicados eliminados.
         };
 
         function showSection(sectionId) {
-            // Mejora: Fix para activar el botón correcto usando data-tab
             sections.forEach(id => {
                 const section = document.getElementById(id);
                 if (section) {
@@ -3977,9 +4239,11 @@
             }
             window.scrollTo(0, 0);
 
-            // Inicializar Tierra en espacio
             if (sectionId === 'espacio') {
                 setTimeout(() => mostrarInfoPlaneta('tierra'), 100);
+            } else if (sectionId === 'calendario') {
+                // Mostrar todos los meses al cargar, pero con listas ocultas
+                document.querySelectorAll('.month').forEach(m => m.classList.add('visible'));
             }
         }
 
@@ -4080,7 +4344,25 @@
             }
         });
 
-        // Funcionalidad para la sección del sistema solar (actualizada con lunas y más info sobre el Sol)
+        // Funcionalidad para búsqueda de meses en calendario
+        monthSearch.addEventListener('keyup', (event) => {
+            const query = event.target.value.toLowerCase().trim();
+            document.querySelectorAll('.month').forEach(month => {
+                const monthName = month.getAttribute('data-month');
+                if (query === '' || monthName.includes(query)) {
+                    month.classList.add('visible');
+                } else {
+                    month.classList.remove('visible');
+                }
+            });
+        });
+
+        // Nueva función para toggle de mes
+        function toggleMonth(monthDiv) {
+            monthDiv.classList.toggle('active');
+        }
+
+        // Funcionalidad para la sección del sistema solar
         const infoPlanetaDiv = document.getElementById('info-planeta');
         const infoPlanetas = {
             mercurio: {
@@ -4254,5 +4536,4 @@
         }
     </script>
 </body>
-
 </html>
