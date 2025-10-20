@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -3456,34 +3455,6 @@ html
                 pib: "USD 110,234 millones (2025)",
                 banderas: "Verde, rojo y amarillo vertical con estrella amarilla"
             },
-            "ejipto": {
-                nombre: "Egipto",
-                capital: "El Cairo",
-                poblacion: "118,366,000",
-                continente: "África",
-                area: "1.01 millones km²",
-                moneda: "Libra egipcia (EGP)",
-                idioma: "Árabe",
-                info: "La República Árabe de Egipto se encuentra en el noreste de África y suroeste de Asia, cruzado por el Nilo.",
-                curiosidades: "Pirámides de Giza y esfinges. Cuna de una de las civilizaciones más antiguas.",
-                gobierno: "República semipresidencialista",
-                pib: "USD 347,342 millones (2025)",
-                banderas: "Roja, blanca y negra horizontal con águila dorada"
-            },
-            "etiopia": {
-                nombre: "Etiopía",
-                capital: "Adís Abeba",
-                poblacion: "135,472,000",
-                continente: "África",
-                area: "1.1 millones km²",
-                moneda: "Birr etíope (ETB)",
-                idioma: "Amárico",
-                info: "La República Federal Democrática de Etiopía es un país sin salida al mar en el Cuerno de África.",
-                curiosidades: "Cuna de Lucy (fósil humano) y café. Nunca colonizada.",
-                gobierno: "República federal parlamentaria",
-                pib: "USD 117,457 millones (2025)",
-                banderas: "Verde, amarilla y roja horizontal con estrella azul"
-            },
             "ghana": {
                 nombre: "Ghana",
                 capital: "Acra",
@@ -3624,20 +3595,34 @@ html
                 pib: "USD 16,789 millones (2025)",
                 banderas: "Negra, verde y amarilla diagonal"
             },
-            "Jamaica": {
-                nombre: "Jamaica",
-                capital: "Kingston",
-                poblacion: "2,961,167",
+            "canada": {
+                nombre: "Canadá",
+                capital: "Ottawa",
+                poblacion: "39,628,000",
                 continente: "América",
-                area: "10,991 km²",
-                moneda: "Dólar jamaicano (JMD)",
-                idioma: "Inglés",
-                info: "Jamaica es una isla en el Caribe conocida por su música reggae, cultura vibrante y paisajes naturales.",
-                curiosidades: "Cuna de Bob Marley y Usain Bolt. Famosa por el jerk chicken y playas.",
+                area: "9.98 millones km²",
+                moneda: "Dólar canadiense (CAD)",
+                idioma: "Inglés y francés",
+                info: "Canadá es el segundo país más grande del mundo por superficie, conocido por su diversidad cultural y paisajes naturales.",
+                curiosidades: "Hockey sobre hielo y jarabe de arce. Hogar de las Montañas Rocosas y las Cataratas del Niágara.",
                 gobierno: "Monarquía constitucional parlamentaria",
-                pib: "USD 16,789 millones (2025)",
-                banderas: "Negra, verde y amarilla diagonal"
+                pib: "USD 2.2 billones (2025)",
+                banderas: "Roja y blanca con hoja de arce"
             },
+            "Brasil": {
+                nombre: "Brasil",
+                capital: "Brasilia",
+                poblacion: "216,422,446",
+                continente: "América",
+                area: "8.51 millones km²",
+                moneda: "Real brasileño (BRL)",
+                idioma: "Portugués",
+                info: "La República Federativa del Brasil es el país más grande de América del Sur y el quinto más grande del mundo.",
+                curiosidades: "Amazonas, la selva tropical más grande. Carnaval de Río y fútbol apasionado.",
+                gobierno: "República federal presidencialista",
+                pib: "USD 3.5 billones (2025)",
+                banderas: "Verde con rombo amarillo y esfera azul con estrellas"
+            }
 
             // Continuar expandiendo con más países usando los datos obtenidos hasta llegar a 100 (aquí se muestran ejemplos adicionales; en implementación completa, continuar con el resto usando datos similares)
         };
@@ -3659,6 +3644,16 @@ html
                     question: "¿Qué animal es conocido como el rey de la selva?",
                     options: ["Elefante", "Tigre", "León", "Jirafa"],
                     answer: "León"
+                },
+                {
+                    question: "¿cual es el mamifero mas grande del planeta terra?",
+                    options: ["Elefante africano", "Ballena azul", "Jirafa"],
+                    answer: "Ballena azul"
+                },
+                {
+                    question: "¿cual es el amimal que mas venenoso del mundo?",
+                    options: ["Rana dardo dorada", "Serpiente taipán", "Pez piedra", "Avispa de mar"],
+                    answer: "Rana dardo dorada"
                 }
             ],
             espacio: [
@@ -3681,6 +3676,11 @@ html
                     question: "¿Cuántas lunas tiene Júpiter aproximadamente?",
                     options: ["4", "28", "95", "1"],
                     answer: "95"
+                },
+                {
+                    question: "¿cual es el planeta mas denso del sistema solar?",
+                    options: ["Tierra", "Mercurio", "Venus"],
+                    answer: "Tierra"
                 }
             ],
             paises: [
@@ -3698,6 +3698,7 @@ html
                     question: "¿Cuál es el país más poblado del mundo en 2025?",
                     options: ["China", "India", "Estados Unidos", "Indonesia"],
                     answer: "India"
+                
                 }
             ]
         };
@@ -3938,6 +3939,7 @@ html
                 descripcion: "El planeta más cercano al Sol. Es el más pequeño del sistema solar, con una superficie rocosa llena de cráteres similares a la Luna. No tiene atmósfera significativa, lo que causa temperaturas extremas de -173°C a 427°C.",
                 diametro: "4,879 km",
                 masa: "3.30 × 10²³ kg",
+                densidad: "5.43 g/cm³",
                 distanciaSol: "57.9 millones km",
                 periodos: "88 días terrestres",
                 lunas: "0",
@@ -3949,6 +3951,7 @@ html
                 descripcion: "El segundo planeta desde el Sol, conocido como el 'hermano gemelo' de la Tierra por su tamaño similar, pero con una atmósfera tóxica de CO₂ que crea un efecto invernadero extremo.",
                 diametro: "12,104 km",
                 masa: "4.87 × 10²⁴ kg",
+                densisdad: "5.24 g/cm³",
                 distanciaSol: "108.2 millones km",
                 periodos: "225 días terrestres",
                 lunas: "0",
@@ -3960,6 +3963,7 @@ html
                 descripcion: "Nuestro hogar, el único planeta conocido con vida. Tiene una atmósfera rica en oxígeno, océanos cubriendo el 71% de la superficie y una luna estabilizadora.",
                 diametro: "12,742 km",
                 masa: "5.97 × 10²⁴ kg",
+                densidad: "5.52 g/cm³",
                 distanciaSol: "149.6 millones km",
                 periodos: "365.25 días",
                 lunas: "1 (Luna)",
@@ -3971,6 +3975,7 @@ html
                 descripcion: "El 'planeta rojo' por su óxido de hierro. Tiene el volcán más grande del sistema solar (Olimpo Mons) y evidencia de agua pasada.",
                 diametro: "6,779 km",
                 masa: "6.42 × 10²³ kg",
+                densidad: "3.93 g/cm³",
                 distanciaSol: "227.9 millones km",
                 periodos: "687 días terrestres",
                 lunas: "2 (Fobos y Deimos)",
@@ -3982,6 +3987,7 @@ html
                 descripcion: "El gigante gaseoso más grande, con una Gran Mancha Roja (tormenta persistente). Compuesto principalmente de hidrógeno y helio.",
                 diametro: "142,984 km",
                 masa: "1.90 × 10²⁷ kg",
+                densidad: "1.33 g/cm³",
                 distanciaSol: "778.5 millones km",
                 periodos: "11.86 años terrestres",
                 lunas: "95 (79 confirmadas)",
@@ -3993,6 +3999,7 @@ html
                 descripcion: "Famoso por sus anillos de hielo y roca. Es el segundo gigante gaseoso, con una densidad baja que flotaría en agua.",
                 diametro: "120,536 km",
                 masa: "5.68 × 10²⁶ kg",
+                densidad: "0.69 g/cm³",
                 distanciaSol: "1.43 mil millones km",
                 periodos: "29.46 años terrestres",
                 lunas: "146 (83 con nombres)",
@@ -4004,6 +4011,7 @@ html
                 descripcion: "Gigante de hielo inclinado 98° sobre su órbita, posiblemente por un impacto antiguo. Atmósfera de hidrógeno, helio y metano (azul).",
                 diametro: "51,118 km",
                 masa: "8.68 × 10²⁵ kg",
+                densidad: "1.27 g/cm³",
                 distanciaSol: "2.87 mil millones km",
                 periodos: "84 años terrestres",
                 lunas: "28",
@@ -4015,6 +4023,7 @@ html
                 descripcion: "El planeta más lejano, gigante de hielo con vientos más rápidos del sistema solar (2,100 km/h). Azul intenso por metano.",
                 diametro: "49,528 km",
                 masa: "1.02 × 10²⁶ kg",
+                densidad: "1.64 g/cm³",
                 distanciaSol: "4.50 mil millones km",
                 periodos: "164.8 años terrestres",
                 lunas: "16",
@@ -4140,4 +4149,3 @@ html
     </script>
 </body>
 </html>
-
