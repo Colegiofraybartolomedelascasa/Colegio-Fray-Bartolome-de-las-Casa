@@ -1040,7 +1040,7 @@
             <div class="space-header">
                 <h2>Explorador del Sistema Solar</h2>
                 <p class="space-subtitle">DESCUBRE LOS PLANETAS DE NUESTRO SISTEMA SOLAR</p>
-                <p>Creado por <strong>Carlos Mendoza</strong> y <strong>Rodrigo Mesis</strong> 
+                <p>Creado por <strong>Carlos Mendoza</strong> , <strong>Rodrigo Mesis</strong> y <strong>Ariel Flores</strong></p>
             </div>
 
             <div class="solar-system">
