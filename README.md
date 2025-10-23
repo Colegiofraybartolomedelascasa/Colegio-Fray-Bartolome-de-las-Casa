@@ -368,6 +368,7 @@
             align-items: center;
         }
 
+        
         .sun {
             position: absolute;
             width: 80px;
@@ -376,13 +377,13 @@
             border-radius: 50%;
             box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00, inset 0 0 20px rgba(255, 255, 255, 0.2);
             z-index: 10;
-            animation: pulse 4s infinite alternate;
+            /* animation: pulse 4s infinite alternate; */ /* Animación desactivada */
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: #fff;
-        }
+}
 
         @keyframes pulse {
             0% {
@@ -1039,7 +1040,7 @@
             <div class="space-header">
                 <h2>Explorador del Sistema Solar</h2>
                 <p class="space-subtitle">DESCUBRE LOS PLANETAS DE NUESTRO SISTEMA SOLAR</p>
-                <p>Creado por <strong>Carlos Mendoza</strong> , <strong>Rodrigo Mesis</strong> y</strong>Ariel Flores</strong></p>
+                <p>Creado por <strong>Carlos Mendoza</strong> y <strong>Rodrigo Mesis</strong> 
             </div>
 
             <div class="solar-system">
