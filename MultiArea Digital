@@ -1,4 +1,3 @@
-´´´html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -369,6 +368,7 @@
             align-items: center;
         }
 
+        
         .sun {
             position: absolute;
             width: 80px;
@@ -377,13 +377,13 @@
             border-radius: 50%;
             box-shadow: 0 0 50px #ff4500, 0 0 100px #ff8c00, inset 0 0 20px rgba(255, 255, 255, 0.2);
             z-index: 10;
-            animation: pulse 4s infinite alternate;
+            /* animation: pulse 4s infinite alternate; */ /* Animación desactivada */
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: #fff;
-        }
+}
 
         @keyframes pulse {
             0% {
@@ -986,7 +986,7 @@
     <div class="main-container">
         <div class="header-main">
             <div>
-                <h1>MultiÁrea Digital 3.0</h1>
+                <h1>MultiÁrea Digital 4.0</h1>
                 <p>Explora, descubre y aprende con nuestras herramientas mejoradas</p>
             </div>
             <button class="mode-toggle" onclick="toggleMode()" aria-label="Cambiar modo claro/oscuro">
@@ -1040,7 +1040,7 @@
             <div class="space-header">
                 <h2>Explorador del Sistema Solar</h2>
                 <p class="space-subtitle">DESCUBRE LOS PLANETAS DE NUESTRO SISTEMA SOLAR</p>
-                <p>Creado por <strong>Carlos Mendoza</strong> y <strong>Rodrigo Mesis</strong></p>
+                <p>Creado por <strong>Carlos Mendoza</strong> y <strong>Rodrigo Mesis</strong> 
             </div>
 
             <div class="solar-system">
@@ -1126,6 +1126,7 @@
                     <div class="planet-icon" style="color: #3454df;"><i class="fas fa-wind"></i></div>
                     <div class="planeta-nombre">Neptuno</div>
                 </button>
+
             </div>
 
             <div id="info-planeta" class="space-info">
@@ -1381,6 +1382,7 @@
                 info: "El perro es un mamífero carnívoro de la familia de los cánidos. Es una subespecie del lobo y fue el primer animal domesticado por el ser humano. Se utiliza como animal de compañía, de trabajo, para caza, y como perro guía o de rescate.",
                 alimentacion: "Omnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "canino",
                 habitat: "Global (domesticado), originario de Eurasia",
                 caracteristicas: "Excelente olfato, social, jerárquico y adaptable.",
                 curiosidades: "Pueden entender hasta 250 palabras y gestos. Su nariz tiene una huella única.",
@@ -1404,6 +1406,7 @@
                 info: "El león es un mamífero carnívoro de la familia Felidae, conocido como el 'rey de la selva'. Vive en manadas en las sabanas africanas y es el único felino social.",
                 alimentacion: "Carnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "Felino",
                 habitat: "África (sabanas y praderas)",
                 caracteristicas: "Macho con melena, fuerte, veloz hasta 80 km/h.",
                 curiosidades: "Las leonas cazan el 90% de la comida. Un rugido se oye a 8 km.",
@@ -1703,6 +1706,7 @@
                 info: "El tigre es el felino más grande, solitario y territorial, con rayas para camuflaje en junglas.",
                 alimentacion: "Carnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "felino",
                 habitat: "Asia (junglas, manglares)",
                 caracteristicas: "Natación experta, rugido a 3 km, hasta 300 kg.",
                 curiosidades: "Impronta lengua áspera para acicalarse. Subespecies como siberiano.",
@@ -1726,6 +1730,7 @@
                 info: "El gato es un mamífero carnívoro de la familia Felidae, domesticado desde el antiguo Egipto. Es conocido por su independencia y agilidad.",
                 alimentacion: "Carnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "felino",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Visión nocturna, bigotes sensoriales, aterrizaje en patas.",
                 curiosidades: "Duermen 16 horas al día. Ronroneo cura huesos.",
@@ -1835,7 +1840,7 @@
                     especie: "D. plexippus"
                 }
             },
-            "arana": {
+            "araña": {
                 nombre: "Araña lobo (Lycosa tarantula)",
                 tipo: "Arácnido depredador",
                 info: "La araña lobo es un arácnido cazador activo, sin tela, con veneno no letal para humanos.",
@@ -1933,6 +1938,7 @@
                 info: "El zorro rojo es un mamífero adaptable, conocido por su astucia en folclore.",
                 alimentacion: "Omnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "canino",
                 habitat: "Global (bosques, ciudades)",
                 caracteristicas: "Cola espesa, orejas grandes, nocturno.",
                 curiosidades: "Cazan solos. Adaptados a entornos urbanos.",
@@ -1956,6 +1962,7 @@
                 info: "El cerdo es un mamífero omnívoro domesticado por su carne y piel. Son inteligentes y sociales.",
                 alimentacion: "Omnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica:  "porcina",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Olfato agudo, hocico flexible, sociable.",
                 curiosidades: "Pueden aprender trucos. Su piel se usa en cuero.",
@@ -2002,6 +2009,7 @@
                 info: "La vaca es un mamífero herbívoro domesticado por su carne, leche y cuero. Son animales de pastoreo.",
                 alimentacion: "Herbívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica:  "bovina",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Gran tamaño, rumiante, sociable.",
                 curiosidades: "Tienen un estómago de 4 compartimentos. Pueden recordar ubicaciones de comida.",
@@ -2094,6 +2102,7 @@
                 info: "El lobo gris es un mamífero carnívoro social, conocido por su estructura de manada y habilidades de caza cooperativa.",
                 alimentacion: "Carnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "canino",
                 habitat: "América del Norte, Europa, Asia (bosques, tundra)",
                 caracteristicas: "Pelaje denso, aullido distintivo, resistencia.",
                 curiosidades: "Pueden recorrer hasta 50 km en una noche. Tienen un sentido del olfato excepcional.",
@@ -2232,6 +2241,7 @@
                 info: "El ratón doméstico es un pequeño mamífero roedor, conocido por su adaptabilidad a entornos humanos y su rápida reproducción.",
                 alimentacion: "Omnívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "Roedor",
                 habitat: "Global (domesticado y salvaje)",
                 caracteristicas: "Cuerpo pequeño, cola larga, bigotes sensoriales.",
                 curiosidades: "Pueden reproducirse cada 20 días. Usados en investigación científica.",
@@ -2255,6 +2265,7 @@
                 info: "El caballo doméstico es un mamífero herbívoro domesticado por su fuerza y velocidad, utilizado en transporte y deporte.",
                 alimentacion: "Herbívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "Equino",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Cuerpo musculoso, crin, pezuñas.",
                 curiosidades: "Pueden dormir de pie. Tienen una visión panorámica.",
@@ -2591,6 +2602,7 @@
                 info: "La oveja doméstica es un mamífero herbívoro criado por su lana, carne y leche.",
                 alimentacion: "Herbívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "ovino",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Cuerpo cubierto de lana, cuernos en algunas razas, comportamiento gregario.",
                 curiosidades: "Pueden reconocer hasta 50 caras humanas. Su lana es una de las fibras naturales más utilizadas.",
@@ -2614,6 +2626,7 @@
                 info: "La cabra doméstica es un mamífero herbívoro criado por su leche, carne y piel.",
                 alimentacion: "Herbívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "caprino",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Cuerpo ágil, cuernos en ambas sexos, comportamiento curioso.",
                 curiosidades: "Pueden escalar superficies empinadas. Su leche es utilizada para hacer quesos especiales.",
@@ -2637,6 +2650,7 @@
                 info: "El chivo es un mamífero herbívoro domesticado, similar a la cabra, criado por su carne y piel.",
                 alimentacion: "Herbívoro",
                 clasificacion: "Mamífero",
+                clasificacion_zootecnica: "caprino",
                 habitat: "Global (domesticado)",
                 caracteristicas: "Cuerpo robusto, cuernos en ambas sexos, comportamiento social.",
                 curiosidades: "Son animales muy resistentes y adaptables. Su carne es apreciada en muchas culturas.",
@@ -2652,6 +2666,627 @@
                     familia: "Bovidae",
                     genero: "Capra",
                     especie: "C. aegagrus hircus"
+                }
+            },
+            "chacal": {
+                nombre: "Chacal dorado (Canis aureus)",
+                tipo: "Mamífero carnívoro",
+                info: "El chacal dorado es un mamífero carnívoro conocido por su adaptabilidad a diversos hábitats y su dieta omnívora.",
+                alimentacion: "Omnívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "canino",
+                habitat: "África, Asia y Europa (sabana, desierto, bosques)",
+                caracteristicas: "Pelaje dorado, orejas grandes, agilidad.",
+                curiosidades: "Son animales muy sociales que viven en parejas o pequeños grupos. Tienen un aullido distintivo.",
+                esperanza_vida: "10-12 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Carnivora",
+                    familia: "Canidae",
+                    genero: "Canis",
+                    especie: "C. aureus"
+                }
+            },
+            "lobo rojo": {
+                nombre: "Lobo rojo (Canis rufus)",
+                tipo: "Mamífero carnívoro",
+                info: "El lobo rojo es un mamífero carnívoro en peligro de extinción, conocido por su pelaje rojizo y su comportamiento social.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "canino",
+                habitat: "Sureste de Estados Unidos (bosques, marismas)",
+                caracteristicas: "Pelaje rojizo, orejas grandes, estructura social.",
+                curiosidades: "Es una especie en peligro crítico debido a la pérdida de hábitat y la hibridación con coyotes. Tienen un aullido distintivo.",
+                esperanza_vida: "6-8 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "En peligro crítico",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Carnivora",
+                    familia: "Canidae",
+                    genero: "Canis",
+                    especie: "C. rufus"
+                }
+            },
+            "borrego simarron": {
+                nombre: "Borrego cimarrón (Ovis canadensis)",
+                tipo: "Mamífero herbívoro",
+                info: "El borrego cimarrón es un mamífero herbívoro nativo de América del Norte, conocido por sus impresionantes cuernos curvados y su habilidad para escalar terrenos rocosos.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificasiozootecnica:"ovino",
+                habitat: "Montañas y áreas rocosas de América del Norte",
+                caracteristicas: "Cuerpo robusto, cuernos grandes y curvados, agilidad en terrenos escarpados.",
+                curiosidades: "Son excelentes escaladores y pueden saltar grandes distancias. Los machos usan sus cuernos en combates rituales durante la temporada de apareamiento.",
+                esperanza_vida: "10-12 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae",
+                    genero: "Ovis",
+                    especie: "O. canadensis"
+                }
+            },
+            "toro": {
+                nombre: "Toro (Bos taurus)",
+                tipo: "Mamífero herbívoro",
+                info: "El toro es un mamífero herbívoro domesticado, conocido por su fuerza y tamaño, utilizado principalmente en la agricultura y la ganadería.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "bovino",
+                habitat: "Global (domesticado)",
+                caracteristicas: "Cuerpo musculoso, cuernos prominentes, comportamiento territorial.",
+                curiosidades: "Son animales muy fuertes y resistentes. En algunas culturas, los toros son símbolos de poder y fertilidad.",
+                esperanza_vida: "15-20 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Domesticado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae",
+                    genero: "Bos",
+                    especie: "B. taurus"
+                }
+            },
+            "bisonte": {
+                nombre: "Bisonte americano (Bison bison)",
+                tipo: "Mamífero herbívoro",
+                info: "El bisonte americano es un mamífero herbívoro nativo de América del Norte, conocido por su gran tamaño y su papel histórico en las culturas indígenas.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "bovino",
+                habitat: "Praderas y llanuras de América del Norte",
+                caracteristicas: "Cuerpo masivo, joroba prominente, pelaje denso.",
+                curiosidades: "Fueron casi cazados hasta la extinción en el siglo XIX. Son símbolos nacionales de Estados Unidos.",
+                esperanza_vida: "15-20 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Casi amenazado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae",
+                    genero: "Bison",
+                    especie: "B. bison"
+                }
+            },
+            "antilope": {
+                nombre: "Antílope africano (varias especies)",
+                tipo: "Mamífero herbívoro",
+                info: "Los antílopes africanos son mamíferos herbívoros nativos de África, conocidos por su velocidad y agilidad.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "bovino",
+                habitat: "Sabana, praderas y bosques de África",
+                caracteristicas: "Cuerpo esbelto, patas largas, cuernos en ambas sexos (varía por especie).",
+                curiosidades: "Son algunos de los animales más rápidos en tierra. Existen muchas especies diferentes con adaptaciones únicas.",
+                esperanza_vida: "10-15 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae"
+                }
+            },
+            "gacela": {
+                nombre: "Gacela (Gazella spp.)",
+                tipo: "Mamífero herbívoro",
+                info: "La gacela es un mamífero herbívoro nativo de África y Asia, conocido por su velocidad y elegancia.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "bovino",
+                habitat: "Sabana, desiertos y praderas de África y Asia",
+                caracteristicas: "Cuerpo esbelto, patas largas, cuernos en ambas sexos (varía por especie).",
+                curiosidades: "Son animales muy rápidos y ágiles, capaces de alcanzar altas velocidades para escapar de depredadores.",
+                esperanza_vida: "10-12 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae",
+                    genero: "Gazella"
+                }
+            },
+            "antilope saiga": {
+                nombre: "Antílope saiga (Saiga tatarica)",
+                tipo: "Mamífero herbívoro",
+                info: "El antílope saiga es un mamífero herbívoro nativo de las estepas de Eurasia, conocido por su distintiva nariz bulbosa que filtra el polvo y calienta el aire frío.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "bovino",
+                habitat: "Estepas y semi-desiertos de Eurasia",
+                caracteristicas: "Cuerpo robusto, nariz grande y flexible, cuernos en los machos.",
+                curiosidades: "Su población ha disminuido drásticamente debido a la caza y la pérdida de hábitat. Son capaces de migrar largas distancias en busca de alimento.",
+                esperanza_vida: "10-12 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "En peligro crítico",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Artiodactyla",
+                    familia: "Bovidae",
+                    genero: "Saiga",
+                    especie: "S. tatarica"
+                }
+            },
+            "burro": {
+                nombre: "Burro doméstico (Equus africanus asinus)",
+                tipo: "Mamífero herbívoro",
+                info: "El burro doméstico es un mamífero herbívoro criado por su resistencia y capacidad de carga en diversas culturas alrededor del mundo.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "equino",
+                habitat: "Global (domesticado)",
+                caracteristicas: "Cuerpo robusto, orejas largas, pelaje corto.",
+                curiosidades: "Son conocidos por su resistencia y capacidad para sobrevivir en condiciones áridas. Tienen una memoria excepcional.",
+                esperanza_vida: "25-30 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Domesticado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Perissodactyla",
+                    familia: "Equidae",
+                    genero: "Equus",
+                    especie: "E. africanus asinus"
+                }
+            },
+            "cebra": {
+                nombre: "Cebra (Equus quagga)",
+                tipo: "Mamífero herbívoro",
+                info: "La cebra es un mamífero herbívoro nativo de África, conocido por sus distintivas rayas blancas y negras que actúan como camuflaje.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "equino",
+                habitat: "Sabana y praderas de África",
+                caracteristicas: "Cuerpo robusto, rayas blancas y negras, comportamiento social.",
+                curiosidades: "Cada cebra tiene un patrón de rayas único. Viven en grupos sociales llamados manadas.",
+                esperanza_vida: "20-25 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Perissodactyla",
+                    familia: "Equidae",
+                    genero: "Equus",
+                    especie: "E. quagga"
+                }
+            },
+            "Quezal": {
+                nombre: "Quetzal (Pharomachrus mocinno)",
+                tipo: "Ave",
+                info: "El quetzal es un ave tropical conocida por su plumaje vibrante y su importancia cultural en Mesoamérica.",
+                alimentacion: "Frugívoro",
+                clasificacion: "Ave",
+                habitat: "Bosques nubosos de América Central",
+                caracteristicas: "Plumaje verde y rojo, cola larga en machos, pico amarillo.",
+                curiosidades: "Es el ave nacional de Guatemala. Su nombre proviene del náhuatl y significa 'pájaro precioso'.",
+                esperanza_vida: "20 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Oviparo",
+                conservacion: "Casi amenazado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Aves",
+                    orden: "Trogoniformes",
+                    familia: "Trogonidae",
+                    genero: "Pharomachrus",
+                    especie: "P. mocinno"
+                }
+            },
+            "perezoso": {
+                nombre: "Perezoso de tres dedos (Bradypus variegatus)",
+                tipo: "Mamífero herbívoro",
+                info: "El perezoso de tres dedos es un mamífero herbívoro conocido por su lento movimiento y su adaptación a la vida en los árboles.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                habitat: "Bosques tropicales de América Central y del Sur",
+                caracteristicas: "Cuerpo cubierto de pelo, garras largas, metabolismo lento.",
+                curiosidades: "Pasan la mayor parte de su vida colgados de los árboles. Su pelaje alberga algas que les proporcionan camuflaje.",
+                esperanza_vida: "20-30 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Vulnerable",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Pilosa",
+                    familia: "Bradypodidae",
+                    genero: "Bradypus",
+                    especie: "B. variegatus"
+                }
+            },
+            "ormitorrinco": {
+                nombre: "Ornitorrinco (Ornithorhynchus anatinus)",
+                tipo: "Mamífero semiacuático",
+                info: "El ornitorrinco es un mamífero semiacuático conocido por su apariencia única que combina características de mamíferos, aves y reptiles.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Mamífero",
+                habitat: "Ríos y lagos de Australia",
+                caracteristicas: "Pico de pato, cola de castor, patas palmeadas.",
+                curiosidades: "Es uno de los pocos mamíferos que pone huevos. Tiene espolones venenosos en las patas traseras.",
+                esperanza_vida: "10-17 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Oviparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Monotremata",
+                    familia: "Ornithorhynchidae",
+                    genero: "Ornithorhynchus",
+                    especie: "O. anatinus"
+                }
+            },
+            "canguro": {
+                nombre: "Canguro rojo (Macropus rufus)",
+                tipo: "Mamífero herbívoro",
+                info: "El canguro rojo es un mamífero herbívoro nativo de Australia, conocido por su gran tamaño y su capacidad para saltar largas distancias.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                habitat: "Praderas y desiertos de Australia",
+                caracteristicas: "Cuerpo musculoso, patas traseras fuertes, cola larga.",
+                curiosidades: "Es el marsupial más grande del mundo. Pueden saltar hasta 9 metros en un solo salto.",
+                esperanza_vida: "6-8 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo (marsupial)",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Diprotodontia",
+                    familia: "Macropodidae",
+                    genero: "Macropus",
+                    especie: "M. rufus"
+                }
+            },
+            "rinoceronte": {
+                nombre: "Rinoceronte blanco (Ceratotherium simum)",
+                tipo: "Mamífero herbívoro",
+                info: "El rinoceronte blanco es un mamífero herbívoro conocido por su gran tamaño y sus dos cuernos prominentes en el hocico.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                habitat: "Sabana y praderas de África",
+                caracteristicas: "Cuerpo masivo, piel gruesa, dos cuernos en el hocico.",
+                curiosidades: "Es el segundo mamífero terrestre más grande después del elefante. A pesar de su tamaño, pueden correr a velocidades de hasta 50 km/h.",
+                esperanza_vida: "40-50 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Casi amenazado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Perissodactyla",
+                    familia: "Rhinocerotidae",
+                    genero: "Ceratotherium",
+                    especie: "C. simum"
+                }
+            },
+            "mono": {
+                nombre: "Mono capuchino (Cebus capucinus)",
+                tipo: "Mamífero omnívoro",
+                info: "El mono capuchino es un mamífero omnívoro conocido por su inteligencia y habilidades para usar herramientas.",
+                alimentacion: "Omnívoro",
+                clasificacion: "Mamífero",
+                habitat: "Bosques tropicales de América Central y del Sur",
+                caracteristicas: "Cuerpo ágil, cola prensil, pelaje claro con cara oscura.",
+                curiosidades: "Son capaces de usar herramientas para obtener alimento. Tienen una estructura social compleja.",
+                esperanza_vida: "15-25 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Primates",
+                    familia: "Cebidae",
+                    genero: "Cebus",
+                    especie: "C. capucinus"
+                }
+            },
+            "gorila": {
+                nombre: "Gorila de montaña (Gorilla beringei beringei)",
+                tipo: "Mamífero herbívoro",
+                info: "El gorila de montaña es un mamífero herbívoro conocido por su gran tamaño y su vida en las montañas de África Central.",
+                alimentacion: "Herbívoro",
+                clasificacion: "Mamífero",
+                habitat: "Bosques montañosos de África Central",
+                caracteristicas: "Cuerpo robusto, pelaje oscuro, fuerza impresionante.",
+                curiosidades: "Son los primates más grandes del mundo. Viven en grupos sociales liderados por un macho dominante llamado 'espalda plateada'.",
+                esperanza_vida: "35-40 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "En peligro",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Primates",
+                    familia: "Hominidae",
+                    genero: "Gorilla",
+                    especie: "G. beringei beringei"
+                }
+            },
+            "lapa": {
+                nombre: "Lapa roja (Ara macao)",
+                tipo: "Ave",
+                info: "La lapa roja es un ave tropical conocida por su vibrante plumaje rojo, azul y amarillo, y su inteligencia.",
+                alimentacion: "Frugívoro",
+                clasificacion: "Ave",
+                habitat: "Bosques tropicales de América Central y del Sur",
+                caracteristicas: "Plumaje rojo, azul y amarillo, pico fuerte, cola larga.",
+                curiosidades: "Son aves muy sociales que viven en parejas o grupos. Pueden imitar sonidos humanos.",
+                esperanza_vida: "40-50 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Oviparo",
+                conservacion: "Vulnerable",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Aves",
+                    orden: "Psittaciformes",
+                    familia: "Psittacidae",
+                    genero: "Ara",
+                    especie: "A. macao"
+                }
+            },
+            "Tarantula": {
+                nombre: "Tarántula (Theraphosidae)",
+                tipo: "Arácnido",
+                info: "La tarántula es un arácnido conocido por su gran tamaño y su pelaje denso, que utiliza para defenderse de los depredadores.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Arácnido",
+                habitat: "Diversos hábitats en todo el mundo",
+                caracteristicas: "Cuerpo grande y peludo, ocho patas, glándulas de veneno.",
+                curiosidades: "Pueden lanzar pelos urticantes para defenderse. Algunas especies pueden vivir hasta 30 años en cautiverio.",
+                esperanza_vida: "10-30 años",
+                esqueleto: "Exoesqueleto",
+                reproduccion: "Oviparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Arthropoda",
+                    clase: "Arachnida",
+                    orden: "Araneae",
+                    familia: "Theraphosidae"
+                }
+            },
+            "Escorpión": {
+                nombre: "Escorpión (varias especies)",
+                tipo: "Arácnido",
+                info: "El escorpión es un arácnido conocido por su cola segmentada con un aguijón venenoso, utilizado para cazar presas y defenderse.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Arácnido",
+                habitat: "Diversos hábitats en todo el mundo",
+                caracteristicas: "Cuerpo segmentado, ocho patas, cola con aguijón.",
+                curiosidades: "Pueden sobrevivir largos períodos sin comida. Su veneno varía en toxicidad según la especie.",
+                esperanza_vida: "3-8 años",
+                esqueleto: "Exoesqueleto",
+                reproduccion: "Vivíparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Arthropoda",
+                    clase: "Arachnida",
+                    orden: "Scorpiones"
+                }
+            },
+            "zirucata": {
+                nombre: "Zirucata (Loxosceles laeta)",
+                tipo: "Arácnido",
+                info: "La zirucata es un arácnido conocido por su veneno necrotizante, que puede causar lesiones graves en humanos.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Arácnido",
+                habitat: "Áreas urbanas y rurales de América del Sur",
+                caracteristicas: "Cuerpo pequeño, color marrón, marca en forma de violín en el cefalotórax.",
+                curiosidades: "Su mordedura puede causar necrosis en la piel. Es una de las arañas más venenosas de América del Sur.",
+                esperanza_vida: "1-2 años",
+                esqueleto: "Exoesqueleto",
+                reproduccion: "Oviparo",
+                conservacion: "No amenazado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Arthropoda",
+                    clase: "Arachnida",
+                    orden: "Araneae",
+                    familia: "Sicariidae",
+                    genero: "Loxosceles",
+                    especie: "L. laeta"
+                }
+            },
+            "hamster": {
+                nombre: "Hámster sirio (Mesocricetus auratus)",
+                tipo: "Mamífero",
+                info: "El hámster sirio es un mamífero roedor conocido por su tamaño pequeño y su comportamiento nocturno.",
+                alimentacion: "Omnívoro",
+                clasificacion: "Mamífero",
+                clasificacion_zootecnica: "roedor",
+                habitat: "Regiones áridas de Siria y Turquía",
+                caracteristicas: "Cuerpo compacto, pelaje suave, mejillas expansibles.",
+                curiosidades: "Son animales solitarios y territoriales. Pueden almacenar comida en sus mejillas para llevarla a su madriguera.",
+                esperanza_vida: "2-3 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "No amenazado",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Rodentia",
+                    familia: "Cricetidae",
+                    genero: "Mesocricetus",
+                    especie: "M. auratus"
+                }
+            },
+            "nutria": {
+                nombre: "Nutria gigante (Pteronura brasiliensis)",
+                tipo: "Mamífero acuático",
+                info: "La nutria gigante es un mamífero acuático conocido por su tamaño grande y su comportamiento social en ríos y lagos de América del Sur.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Mamífero",
+                habitat: "Ríos y lagos de América del Sur",
+                caracteristicas: "Cuerpo alargado, pelaje denso, patas palmeadas.",
+                curiosidades: "Son las nutrias más grandes del mundo. Viven en grupos familiares y son excelentes nadadoras.",
+                esperanza_vida: "10-15 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "En peligro",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Carnivora",
+                    familia: "Mustelidae",
+                    genero: "Pteronura",
+                    especie: "P. brasiliensis"
+                }
+            },
+            "sepiente cascabel": {
+                nombre: "Serpiente de cascabel (Crotalus spp.)",
+                tipo: "Reptil venenoso",
+                info: "La serpiente de cascabel es un reptil venenoso conocido por el sonido característico que produce al agitar su cola, utilizado como advertencia.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Reptil",
+                habitat: "Diversos hábitats en América del Norte y del Sur",
+                caracteristicas: "Cuerpo robusto, escamas, cola con segmentos que producen sonido.",
+                curiosidades: "Su veneno es utilizado para inmovilizar presas. Existen varias especies con diferentes patrones de coloración.",
+                esperanza_vida: "10-20 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Reptilia",
+                    orden: "Squamata",
+                    familia: "Viperidae",
+                    genero: "Crotalus"
+                }
+            },
+            "avestrus": {
+                nombre: "Avestruz (Struthio camelus)",
+                tipo: "Ave corredora",
+                info: "El avestruz es el ave más grande del mundo, conocida por su velocidad y su capacidad para correr largas distancias.",
+                alimentacion: "Omnívoro",
+                clasificacion: "Ave",
+                habitat: "Sabana y desiertos de África",
+                caracteristicas: "Cuerpo grande, patas largas, cuello largo, incapaz de volar.",
+                curiosidades: "Pueden correr a velocidades de hasta 70 km/h. Ponen los huevos más grandes de todas las aves.",
+                esperanza_vida: "30-40 años",
+                esqueleto: "Vertebrado",
+                reproduccion: "Oviparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Aves",
+                    orden: "Struthioniformes",
+                    familia: "Struthionidae",
+                    genero: "Struthio",
+                    especie: "S. camelus"
+                }
+            },
+            "elefante marino": {
+                nombre: "Elefante marino (Mirounga spp.)",
+                tipo: "Mamífero marino",
+                info: "El elefante marino es un mamífero marino conocido por su gran tamaño y su distintiva probóscide en los machos.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Mamífero",
+                habitat: "Costas y océanos del hemisferio sur",
+                caracteristicas: "Cuerpo masivo, piel gruesa, probóscide en machos.",
+                curiosidades: "Son los pinnípedos más grandes del mundo. Pueden sumergirse a grandes profundidades para buscar alimento.",
+                esperanza_vida: "20-25 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Preocupación menor",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Carnivora",
+                    familia: "Phocidae",
+                    genero: "Mirounga"
+                }
+            },
+            "leon marino": {
+                nombre: "León marino (Otariinae)",
+                tipo: "Mamífero marino",
+                info: "El león marino es un mamífero marino conocido por su agilidad en el agua y su comportamiento social en colonias.",
+                alimentacion: "Carnívoro",
+                clasificacion: "Mamífero",
+                habitat: "Costas y océanos de diversas regiones del mundo",
+                caracteristicas: "Cuerpo robusto, orejas externas, aletas delanteras grandes.",
+                curiosidades: "Son excelentes nadadores y pueden permanecer bajo el agua durante largos períodos. Viven en grandes colonias en las costas.",
+                esperanza_vida: "20-30 años salvaje",
+                esqueleto: "Vertebrado",
+                reproduccion: "Vivíparo",
+                conservacion: "Varía según la especie",
+                taxonomia: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    clase: "Mammalia",
+                    orden: "Carnivora",
+                    familia: "Otariidae",
+                    subfamilia: "Otariinae"
                 }
             },
         };
@@ -2755,20 +3390,6 @@
                 gobierno: "República parlamentaria",
                 pib: "USD 410,338 millones (2025)",
                 banderas: "Y forma de 'Y' en rojo, azul, verde, negro, blanco y amarillo"
-            },
-            "japon": {
-                nombre: "Japón",
-                capital: "Tokio",
-                poblacion: "123,103,000",
-                continente: "Asia",
-                area: "377,975 km²",
-                moneda: "Yen japonés (JPY)",
-                idioma: "Japonés",
-                info: "Japón es un archipiélago en el este de Asia compuesto por cuatro islas principales. Es una monarquía constitucional con un alto nivel de desarrollo tecnológico.",
-                curiosidades: "Mezcla de tradición (samuráis, geishas) y modernidad (trenes bala, anime). Hogar del Monte Fuji y cerezos en flor.",
-                gobierno: "Monarquía constitucional parlamentaria",
-                pib: "USD 4,186,431 millones (2025)",
-                banderas: "Blanca con disco rojo (sol naciente)"
             },
             "china": {
                 nombre: "China",
@@ -3623,7 +4244,133 @@
                 gobierno: "República federal presidencialista",
                 pib: "USD 3.5 billones (2025)",
                 banderas: "Verde con rombo amarillo y esfera azul con estrellas"
-            }
+            },
+            "peru": {
+                nombre: "Perú",
+                capital: "Lima",
+                poblacion: "34,048,000",
+                continente: "América",
+                area: "1.28 millones km²",
+                moneda: "Sol peruano (PEN)",
+                idioma: "Español, quechua y aimara",
+                info: "La República del Perú es un país en la costa oeste de América del Sur, conocido por su historia incaica y biodiversidad.",
+                curiosidades: "Machu Picchu, maravilla del mundo. Cuna del ceviche y la papa.",
+                gobierno: "República presidencialista",
+                pib: "USD 330,123 millones (2025)",
+                banderas: "Roja y blanca vertical con escudo nacional"
+            },
+            "suzan": {
+                nombre: "Suazilandia",
+                capital: "Mbabane (administrativa), Lobamba (legislativa y real)",
+                poblacion: "1,160,164",
+                continente: "África",
+                area: "17,364 km²",
+                moneda: "Lilangeni suazi (SZL)",
+                idioma: "Inglés y suazi",
+                info: "El Reino de Suazilandia es un pequeño país sin salida al mar en el sur de África, conocido por su cultura tradicional y paisajes montañosos.",
+                curiosidades: "Última monarquía absoluta en África. Famosa por sus festivales culturales y vida silvestre.",
+                gobierno: "Monarquía absoluta",
+                pib: "USD 4,567 millones (2025)",
+                banderas: "Azul, amarillo"
+            },
+            "rusia": {
+                nombre: "Rusia",
+                capital: "Moscú",
+                poblacion: "144,104,080",
+                continente: "Europa/Asia",
+                area: "17.1 millones km²",
+                moneda: "Rublo ruso (RUB)",
+                idioma: "Ruso",
+                info: "La Federación de Rusia es el país más grande del mundo por superficie, abarcando Europa y Asia.",
+                curiosidades: "Transiberiano, el ferrocarril más largo del mundo. Ricas tradiciones en literatura y ballet.",
+                gobierno: "República semipresidencialista federal",
+                pib: "USD 1.7 billones (2025)",
+                banderas: "Blanca, azul y roja horizontal"
+            },
+            "china": {
+                nombre: "China",
+                capital: "Beijing",
+                poblacion: "1,425,887,337",
+                continente: "Asia",
+                area: "9.6 millones km²",
+                moneda: "Yuan renminbi (CNY)",
+                idioma: "Chino mandarín",
+                info: "La República Popular China es el país más poblado del mundo y una de las civilizaciones más antiguas.",
+                curiosidades: "Gran Muralla China, una de las nuevas siete maravillas del mundo. Cuna de la pólvora, la brújula y la imprenta.",
+                gobierno: "República socialista unipartidista",
+                pib: "USD 18.5 billones (2025)",
+                banderas: "Roja con cinco estrellas amarillas"
+            },
+            "corea del sur": {
+                nombre: "Corea del Sur",
+                capital: "Seúl",
+                poblacion: "51,305,186",
+                continente: "Asia",
+                area: "100,210 km²",
+                moneda: "Won surcoreano (KRW)",
+                idioma: "Coreano",
+                info: "La República de Corea, conocida como Corea del Sur, es un país en Asia Oriental conocido por su tecnología avanzada y cultura pop.",
+                curiosidades: "K-pop, tecnología y gastronomía. Hogar de Samsung y Hyundai.",
+                gobierno: "República presidencialista",
+                pib: "USD 1.8 billones (2025)",
+                banderas: "Blanca con círculo rojo y azul"
+            },
+            "japon": {
+                nombre: "Japón",
+                capital: "Tokio",
+                poblacion: "125,960,000",
+                continente: "Asia",
+                area: "377,975 km²",
+                moneda: "Yen japonés (JPY)",
+                idioma: "Japonés",
+                info: "El Japón es un archipiélago en Asia Oriental conocido por su tecnología avanzada, cultura tradicional y paisajes naturales.",
+                curiosidades: "Cuna del sushi, samuráis y anime. Tecnología de punta y trenes bala.",
+                gobierno: "Monarquía constitucional parlamentaria",
+                pib: "USD 5.1 billones (2025)",
+                banderas: "Blanca con círculo rojo"
+            },
+            "Rusia": {
+                nombre: "Rusia",
+                capital: "Moscú",
+                poblacion: "144,104,080",
+                continente: "Europa/Asia",
+                area: "17.1 millones km²",
+                moneda: "Rublo ruso (RUB)",
+                idioma: "Ruso",
+                info: "La Federación de Rusia es el país más grande del mundo por superficie, abarcando Europa y Asia.",
+                curiosidades: "Transiberiano, el ferrocarril más largo del mundo. Ricas tradiciones en literatura y ballet.",
+                gobierno: "República semipresidencialista federal",
+                pib: "USD 1.7 billones (2025)",
+                banderas: "Blanca, azul y roja horizontal"
+            },
+            "portugal": {
+                nombre: "Portugal",
+                capital: "Lisboa",
+                poblacion: "10,352,042",
+                continente: "Europa",
+                area: "92,090 km²",
+                moneda: "Euro (EUR)",
+                idioma: "Portugués",
+                info: "La República Portuguesa es un país en Europa Occidental conocido por su historia marítima y cultura vibrante.",
+                curiosidades: "Cuna de Vasco da Gama y Fernando de Magallanes. Famosa por el fado y el pastel de nata.",
+                gobierno: "República semipresidencialista",
+                pib: "USD 250,123 millones (2025)",
+                banderas: "Verde y roja vertical con escudo nacional"
+            },
+            "grecia": {
+                nombre: "Grecia",
+                capital: "Atenas",
+                poblacion: "10,423,054",
+                continente: "Europa",
+                area: "131,957 km²",
+                moneda: "Euro (EUR)",
+                idioma: "Griego",
+                info: "La República Helénica es un país en el sureste de Europa conocido por su historia antigua y contribuciones a la civilización occidental.",
+                curiosidades: "Cuna de la democracia y los Juegos Olímpicos. Famosa por su mitología y arquitectura clásica.",
+                gobierno: "República parlamentaria",
+                pib: "USD 220,456 millones (2025)",
+                banderas: "Azul y blanca con cruz"
+            },
 
             // Continuar expandiendo con más países usando los datos obtenidos hasta llegar a 100 (aquí se muestran ejemplos adicionales; en implementación completa, continuar con el resto usando datos similares)
         };
@@ -3753,6 +4500,7 @@
 
         // Función para buscar animales (completa)
         function buscarAnimal() {
+
             const query = animalSearch.value.toLowerCase().trim();
             searchResults.innerHTML = '';
             resultDiv.innerHTML = '';
@@ -3799,6 +4547,7 @@
                     <p><strong>Información:</strong> ${animal.info}</p>
                     <p><strong>Alimentación:</strong> ${animal.alimentacion}</p>
                     <p><strong>Clasificación:</strong> <span class="animal-info">${animal.clasificacion}</span></p>
+                    <p><strong>Clasificassionzootecnica:</strong> <span class="animal-info">${animal.clasificacion_zootecnica}</p>
                     <p><strong>Hábitat:</strong> <span class="animal-info">${animal.habitat}</span></p>
                     <p><strong>Características:</strong> ${animal.caracteristicas}</p>
                     <p><strong>Curiosidades:</strong> ${animal.curiosidades}</p>
@@ -3816,6 +4565,7 @@
         // Función para filtros de animales (completa)
         function applyFilters() {
             const clasificacion = document.getElementById('filterClasificacion').value.toLowerCase();
+            const clasificclasificacion_zootecnica = document.getElementById('filterclasificacion_zootecnica').value.toLowerCase();
             const habitat = document.getElementById('filterHabitat').value.toLowerCase();
             const query = animalSearch.value.toLowerCase().trim();
             searchResults.innerHTML = '';
@@ -3824,6 +4574,7 @@
             let filteredAnimals = Object.keys(animalDatabase).filter(key => {
                 const animal = animalDatabase[key];
                 return (!clasificacion || animal.clasificacion.toLowerCase() === clasificacion) &&
+                       (!clasificacion_zootecnica || animal.clasificacion_zootecnica.toLowerCase() === clasificacion_zootecnica) &&
                        (!habitat || animal.habitat.toLowerCase().includes(habitat)) &&
                        (!query || key.includes(query));
             });
@@ -3843,31 +4594,31 @@
         }
 
         // Función para filtros de países (completa)
-        function applyCountryFilters() {
-            const continente = document.getElementById('filterContinente').value.toLowerCase();
-            const query = countrySearch.value.toLowerCase().trim();
-            countryResultDiv.innerHTML = '';
-            countrySearchResults.innerHTML = '';
+       function applyCountryFilters() {
+    const continente = document.getElementById('filterContinente').value.toLowerCase();
+    const query = countrySearch.value.toLowerCase().trim();
+    countryResultDiv.innerHTML = '';
+    countrySearchResults.innerHTML = '';
 
-            let filteredCountries = Object.keys(countryDatabase).filter(key => {
-                const country = countryDatabase[key];
-                return (!continente || country.continente.toLowerCase() === continente) &&
-                       (!query || key.includes(query));
-            });
+    let filteredCountries = Object.keys(countryDatabase).filter(key => {
+        const country = countryDatabase[key];
+        return (!continente || country.continente.toLowerCase() === continente) &&
+               (!query || key.toLowerCase().includes(query));
+    });
 
-            if (filteredCountries.length > 0) {
-                filteredCountries.forEach(countryKey => {
-                    const div = document.createElement('div');
-                    div.className = 'search-item';
-                    div.textContent = countryDatabase[countryKey].nombre;
-                    div.setAttribute('role', 'option');
-                    div.addEventListener('click', () => mostrarInformacionPais(countryKey));
-                    countrySearchResults.appendChild(div);
-                });
-            } else if (query.length >= 2 || continente) {
-                countryResultDiv.innerHTML = '<p class="error-message">No se encontraron países con esos filtros. Intenta con otros.</p>';
-            }
-        }
+    if (filteredCountries.length > 0) {
+        filteredCountries.forEach(countryKey => {
+            const div = document.createElement('div');
+            div.className = 'search-item';
+            div.textContent = countryDatabase[countryKey].nombre;
+            div.setAttribute('role', 'option');
+            div.addEventListener('click', () => mostrarInformacionPais(countryKey));
+            countrySearchResults.appendChild(div);
+        });
+    } else {
+        countryResultDiv.innerHTML = '<p class="error-message">No se encontraron países con esos filtros. Intenta con otros.</p>';
+    }
+}
 
         function mostrarInformacionPais(nombrePais) {
             const pais = countryDatabase[nombrePais];
@@ -3941,6 +4692,7 @@
                 diametro: "4,879 km",
                 masa: "3.30 × 10²³ kg",
                 densidad: "5.43 g/cm³",
+                exploracion: "Mariner 10 (1974-75), MESSENGER (2011-15)",
                 distanciaSol: "57.9 millones km",
                 periodos: "88 días terrestres",
                 lunas: "0",
@@ -3953,6 +4705,7 @@
                 diametro: "12,104 km",
                 masa: "4.87 × 10²⁴ kg",
                 densisdad: "5.24 g/cm³",
+                exploracion: "Mariner 2 (1962), Venera (1970s), Magellan (1990s)",
                 distanciaSol: "108.2 millones km",
                 periodos: "225 días terrestres",
                 lunas: "0",
@@ -3965,6 +4718,7 @@
                 diametro: "12,742 km",
                 masa: "5.97 × 10²⁴ kg",
                 densidad: "5.52 g/cm³",
+                exploracion: "Satélites, Estación Espacial Internacional (ISS)",
                 distanciaSol: "149.6 millones km",
                 periodos: "365.25 días",
                 lunas: "1 (Luna)",
@@ -3977,6 +4731,7 @@
                 diametro: "6,779 km",
                 masa: "6.42 × 10²³ kg",
                 densidad: "3.93 g/cm³",
+                exploracion: "Viking (1976), Curiosity (2012), Perseverance (2021)",
                 distanciaSol: "227.9 millones km",
                 periodos: "687 días terrestres",
                 lunas: "2 (Fobos y Deimos)",
@@ -3989,6 +4744,7 @@
                 diametro: "142,984 km",
                 masa: "1.90 × 10²⁷ kg",
                 densidad: "1.33 g/cm³",
+                exploracion: "Pioneer (1973), Voyager (1979), Juno (2016-presente)",
                 distanciaSol: "778.5 millones km",
                 periodos: "11.86 años terrestres",
                 lunas: "95 (79 confirmadas)",
@@ -4001,6 +4757,7 @@
                 diametro: "120,536 km",
                 masa: "5.68 × 10²⁶ kg",
                 densidad: "0.69 g/cm³",
+                exploracion: "Pioneer (1973), Voyager (1980), Cassini (2004-17)",
                 distanciaSol: "1.43 mil millones km",
                 periodos: "29.46 años terrestres",
                 lunas: "146 (83 con nombres)",
@@ -4013,6 +4770,7 @@
                 diametro: "51,118 km",
                 masa: "8.68 × 10²⁵ kg",
                 densidad: "1.27 g/cm³",
+                exploracion: "Voyager 2 (1986)",
                 distanciaSol: "2.87 mil millones km",
                 periodos: "84 años terrestres",
                 lunas: "28",
@@ -4025,6 +4783,7 @@
                 diametro: "49,528 km",
                 masa: "1.02 × 10²⁶ kg",
                 densidad: "1.64 g/cm³",
+                exploracion: "Voyager 2 (1989)",
                 distanciaSol: "4.50 mil millones km",
                 periodos: "164.8 años terrestres",
                 lunas: "16",
@@ -4055,6 +4814,14 @@
                     <div class="space-dato">
                         <h4><i class="fas fa-weight-hanging"></i> Masa</h4>
                         <p>${info.masa}</p>
+                    </div>
+                    <div class="space-dato">
+                        <h4><i class="fas fa-compress-arrows-alt"></i> Densidad</h4>
+                        <p>${info.densidad}</p>
+                    </div>
+                    <div class="space-dato">
+                        <h4><i class="fas fa-space-shuttle"></i> Exploración</h4>
+                        <p>${info.exploracion}</p>
                     </div>
                     <div class="space-dato">
                         <h4><i class="fas fa-route"></i> Distancia al Sol</h4>
